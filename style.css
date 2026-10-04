@@ -137,18 +137,26 @@ padding:20px 10%;
 
 }
 
-.logo{
-
-font-size:30px;
-
-font-weight:700;
-
+.logo-box{
+    width:48px;
+    height:48px;
+    border:2px solid #3b82f6;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#ffffff;
+    font-size:1.4rem;
+    font-weight:800;
+    text-decoration:none;
+    transition:all 0.3s ease;
 }
 
-.logo span{
-
-color:#3b82f6;
-
+.logo-box:hover{
+    background:#3b82f6;
+    color:#ffffff;
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(59,130,246,.35);
 }
 
 .nav-links{
