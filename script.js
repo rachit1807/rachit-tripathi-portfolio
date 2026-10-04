@@ -1,76 +1,66 @@
-// ===========================================
-// Cursor Glow
-// ===========================================
-
-const cursor = document.querySelector(".cursor");
-
-document.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-});
-
-// ===========================================
-// Scroll Progress Bar
-// ===========================================
-
-const progressBar = document.getElementById("progress-bar");
-
-window.addEventListener("scroll", () => {
-
-    const scrollTop = document.documentElement.scrollTop;
-
-    const scrollHeight =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-
-    const progress = (scrollTop / scrollHeight) * 100;
-
-    progressBar.style.width = progress + "%";
-
-});
-
-// ===========================================
-// Mobile Navigation
-// ===========================================
+// ================= MOBILE MENU =================
 
 const menuBtn = document.querySelector(".menu-btn");
-
 const navLinks = document.querySelector(".nav-links");
 
 menuBtn.addEventListener("click", () => {
-
     navLinks.classList.toggle("active");
+});
 
-    if (navLinks.classList.contains("active")) {
+// ================= CLOSE MENU =================
 
-        menuBtn.innerHTML = '<i class="fas fa-times"></i>';
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+});
 
+// ================= SCROLL TO TOP =================
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 300) {
+        topBtn.style.display = "block";
     } else {
-
-        menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-
+        topBtn.style.display = "none";
     }
 
 });
 
-document.querySelectorAll(".nav-links a").forEach(link => {
+topBtn.addEventListener("click", () => {
 
-    link.addEventListener("click", () => {
+    window.scrollTo({
 
-        navLinks.classList.remove("active");
+        top: 0,
 
-        menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        behavior: "smooth"
 
     });
 
 });
 
-// ===========================================
-// Active Navbar
-// ===========================================
+// ================= SCROLL PROGRESS =================
+
+const progressBar = document.getElementById("progress-bar");
+
+window.addEventListener("scroll", () => {
+
+    const totalHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const progress =
+        (window.scrollY / totalHeight) * 100;
+
+    progressBar.style.width = progress + "%";
+
+});
+
+// ================= ACTIVE NAVIGATION =================
 
 const sections = document.querySelectorAll("section");
-
 const navItems = document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll", () => {
@@ -79,11 +69,9 @@ window.addEventListener("scroll", () => {
 
     sections.forEach(section => {
 
-        const top = section.offsetTop - 150;
+        const sectionTop = section.offsetTop - 120;
 
-        const height = section.clientHeight;
-
-        if (pageYOffset >= top) {
+        if (pageYOffset >= sectionTop) {
 
             current = section.getAttribute("id");
 
@@ -105,158 +93,48 @@ window.addEventListener("scroll", () => {
 
 });
 
-// ===========================================
-// Back To Top Button
-// ===========================================
+// ================= FADE ANIMATION =================
 
-const topBtn = document.getElementById("topBtn");
+const observer = new IntersectionObserver((entries) => {
 
-window.addEventListener("scroll", () => {
+    entries.forEach(entry => {
 
-    if (window.scrollY > 400) {
+        if (entry.isIntersecting) {
 
-        topBtn.style.display = "block";
-
-    } else {
-
-        topBtn.style.display = "none";
-
-    }
-
-});
-
-topBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
-
-    });
-
-});
-
-// ===========================================
-// Counter Animation
-// ===========================================
-
-const counters = document.querySelectorAll(".counter");
-
-const speed = 100;
-
-const runCounter = () => {
-
-    counters.forEach(counter => {
-
-        const target = +counter.dataset.target;
-
-        const count = +counter.innerText;
-
-        const increment = Math.ceil(target / speed);
-
-        if (count < target) {
-
-            counter.innerText = count + increment;
-
-            setTimeout(runCounter, 20);
-
-        } else {
-
-            counter.innerText = target;
+            entry.target.classList.add("show");
 
         }
 
     });
 
-};
+}, {
 
-const stats = document.querySelector(".stats");
-
-if (stats) {
-
-    const observer = new IntersectionObserver((entries) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                runCounter();
-
-                observer.disconnect();
-
-            }
-
-        });
-
-    });
-
-    observer.observe(stats);
-
-}
-
-// ===========================================
-// Fade Up Animation
-// ===========================================
-
-const fadeElements = document.querySelectorAll(
-
-".about, .skills, .stats, .projects, .education, .experience, .certificates, .achievements, .contact"
-
-);
-
-const fadeObserver = new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
-}
+    threshold: .15
 
 });
 
-},{threshold:.15});
+document.querySelectorAll(
 
-fadeElements.forEach(section=>{
+".section,.project-card,.skill-card,.timeline-item,.certificate-card,.education-card,.achievement-card"
 
-section.classList.add("fade-up");
+).forEach(el => {
 
-fadeObserver.observe(section);
+    el.classList.add("hidden");
 
-});
-
-// ===========================================
-// Current Year
-// ===========================================
-
-const year = new Date().getFullYear();
-
-const copyright = document.querySelector(".copyright");
-
-if(copyright){
-
-copyright.innerHTML=`© ${year} Rachit Tripathi. All Rights Reserved.`;
-
-}
-
-// ===========================================
-// Contact Form
-// ===========================================
-
-const form = document.querySelector("form");
-
-if(form){
-
-form.addEventListener("submit",(e)=>{
-
-e.preventDefault();
-
-alert("Thank you! Your message has been received.");
-
-form.reset();
+    observer.observe(el);
 
 });
 
-}
+// ================= CONTACT FORM =================
+
+const form = document.querySelector(".contact-form");
+
+form.addEventListener("submit", (e) => {
+
+    e.preventDefault();
+
+    alert("Thank you! Your message has been received.");
+
+    form.reset();
+
+});
