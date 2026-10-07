@@ -100,7 +100,7 @@ August 2026 – September 2026
 
 AI-powered code review platform that analyzes code quality, returns review feedback, and creates downloadable reports.
 
-[GitHub repository](https://github.com/rachit1807/AI-Code-Review)
+[Live demo](https://ai-code-review-n5gt.onrender.com/) · [GitHub repository](https://github.com/rachit1807/AI-Code-Review)
 
 **Stack:** React, Node.js, Express, Ollama, MongoDB
 
