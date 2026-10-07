@@ -150,7 +150,7 @@ Resume analyzer that extracts text from PDFs, calculates a heuristic ATS-style s
 
 Full-stack loan management project with ML eligibility prediction, document verification, admin workflows, analytics, and EMI calculations.
 
-[GitHub repository](https://github.com/rachit1807/SmartLoanAI)
+[Live demo](https://smart-loan-ai-one.vercel.app/) · [GitHub repository](https://github.com/rachit1807/SmartLoanAI)
 
 **Stack:** React, FastAPI, machine learning
 
@@ -170,7 +170,7 @@ Responsive registration form with real-time field validation, password strength 
 
 Full-stack product catalog with search, filters, sorting, favorites, catalog statistics, product management, and REST API CRUD operations.
 
-[GitHub repository](https://github.com/rachit1807/ProductHub-API)
+[Live demo](https://product-hub-api-weld.vercel.app/) · [GitHub repository](https://github.com/rachit1807/ProductHub-API)
 
 **Stack:** Node.js, Express, JavaScript, REST API
 
@@ -180,7 +180,7 @@ Full-stack product catalog with search, filters, sorting, favorites, catalog sta
 
 Interactive counter with light and dark themes, progress tracking, achievement badges, saved statistics, a live clock, and keyboard shortcuts.
 
-[GitHub repository](https://github.com/rachit1807/Premium-Counter-App)
+[Live demo](https://rachit1807.github.io/Premium-Counter-App/) · [GitHub repository](https://github.com/rachit1807/Premium-Counter-App)
 
 **Stack:** HTML, CSS, JavaScript, Local Storage
 
