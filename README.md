@@ -48,39 +48,21 @@ It has been designed with a clean user interface, responsive layouts, and modern
 
 ## Tech Stack
 
-### Frontend
+### This portfolio
 
 - HTML5
 - CSS3
-- JavaScript
+- Vanilla JavaScript
+- GitHub Pages
 
-### Backend
+### Technologies used across featured projects
 
-- Node.js
-- Express.js
-
-### Database
-
-- PostgreSQL
-- MongoDB
-
-### Programming Languages
-
-- Java
-- Python
-- SQL
-
-### Artificial Intelligence & Machine Learning
-
-- Machine Learning
-- Natural Language Processing (NLP)
-- Scikit-learn
-
-### Tools
-
-- Git
-- GitHub
-- VS Code
+- **Languages:** JavaScript, Python, Java, SQL
+- **Frontend:** HTML5, CSS3, React
+- **Backend and APIs:** Node.js, Express, Flask, FastAPI
+- **Data:** MongoDB, PostgreSQL, browser Local Storage
+- **AI and machine learning:** scikit-learn, NLP, Ollama
+- **Tools:** Git, GitHub, VS Code
 
 ---
 
@@ -116,53 +98,91 @@ August 2026 – September 2026
 
 ### AI Code Review
 
-AI-powered application for intelligent code analysis and review.
+AI-powered code review platform that analyzes code quality, returns review feedback, and creates downloadable reports.
 
-**GitHub**
+[GitHub repository](https://github.com/rachit1807/AI-Code-Review)
 
-https://github.com/rachit1807/AI-Code-Review
+**Stack:** React, Node.js, Express, Ollama, MongoDB
 
 ---
 
 ### Secure Auth API
 
-Secure REST API implementing authentication, authorization, JWT, password hashing, and protected routes.
+Secure REST API with registration and login, JWT authentication, password hashing, protected routes, and profile management.
 
-**GitHub**
+[GitHub repository](https://github.com/rachit1807/Secure-Auth-API)
 
-https://github.com/rachit1807/Secure-Auth-API
+**Stack:** Node.js, Express, MongoDB, JWT
 
 ---
 
 ### Git Version Control Practice
 
-Practical implementation of Git workflows including commits, branching, merging, and deployment.
+Practical Git and GitHub workflows covering commits, branches, merges, and a GitHub Pages demo.
 
-**Repository**
+[Live demo](https://rachit1807.github.io/git-version-control-practice/) · [GitHub repository](https://github.com/rachit1807/git-version-control-practice)
 
-https://github.com/rachit1807/git-version-control-practice
-
-**Live Demo**
-
-https://rachit1807.github.io/git-version-control-practice/
+**Stack:** Git, GitHub, HTML
 
 ---
 
 ### FitForge Landing Page
 
-Responsive fitness landing page developed using HTML, CSS, and JavaScript.
+Responsive fitness website with a BMI calculator, membership modal, testimonials, gallery, FAQs, and contact section.
+
+[Live demo](https://rachit1807.github.io/Task-1-FitForge-Landing-Page/) · [GitHub repository](https://github.com/rachit1807/Task-1-FitForge-Landing-Page)
+
+**Stack:** HTML, CSS, JavaScript
 
 ---
 
-### AI Resume Analyzer & Job Matching Platform
+### AI Resume Analyzer
 
-AI-powered application that analyzes resumes, calculates ATS compatibility scores, extracts technical skills, and recommends suitable job roles using NLP.
+Resume analyzer that extracts text from PDFs, calculates a heuristic ATS-style score, compares resumes with a job description, identifies selected skill gaps, and provides rule-based suggestions.
+
+[Live demo](https://ai-resume-analyzer-rachit.onrender.com/) · [GitHub repository](https://github.com/rachit1807/AI_RESUME_ANALYZER)
+
+**Stack:** Python, Flask, pdfplumber, scikit-learn
 
 ---
 
 ### SmartLoanAI
 
-Machine Learning project that predicts loan approval probability using feature engineering and Scikit-learn.
+Full-stack loan management project with ML eligibility prediction, document verification, admin workflows, analytics, and EMI calculations.
+
+[GitHub repository](https://github.com/rachit1807/SmartLoanAI)
+
+**Stack:** React, FastAPI, machine learning
+
+---
+
+### FormGuard
+
+Responsive registration form with real-time field validation, password strength feedback, confirmation checks, and browser-based user storage.
+
+[Live demo](https://rachit1807.github.io/FormGuard/) · [GitHub repository](https://github.com/rachit1807/FormGuard)
+
+**Stack:** HTML, CSS, JavaScript, Local Storage
+
+---
+
+### ProductHub API
+
+Full-stack product catalog with search, filters, sorting, favorites, catalog statistics, product management, and REST API CRUD operations.
+
+[GitHub repository](https://github.com/rachit1807/ProductHub-API)
+
+**Stack:** Node.js, Express, JavaScript, REST API
+
+---
+
+### Premium Counter App
+
+Interactive counter with light and dark themes, progress tracking, achievement badges, saved statistics, a live clock, and keyboard shortcuts.
+
+[GitHub repository](https://github.com/rachit1807/Premium-Counter-App)
+
+**Stack:** HTML, CSS, JavaScript, Local Storage
 
 ---
 
