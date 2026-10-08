@@ -96,6 +96,14 @@ August 2026 – September 2026
 
 ## Featured Projects
 
+### TaskFlow Pro
+
+Enterprise project management platform with multi-workspace access, team roles, project-specific Kanban boards, task assignment, comments, attachments, notifications, and activity history.
+
+[Live demo](https://taskflow-pro-web.onrender.com/) · [GitHub repository](https://github.com/rachit1807/TaskFlow-Pro)
+
+**Stack:** React, Node.js, Express, MongoDB, Mongoose
+
 ### AI Code Review
 
 AI-powered code review platform that analyzes code quality, returns review feedback, and creates downloadable reports.
