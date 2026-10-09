@@ -144,13 +144,13 @@ Responsive fitness website with a BMI calculator, membership modal, testimonials
 
 ---
 
-### AI Resume Analyzer
+### AI Resume Analyzer & Career Development Platform
 
-Resume analyzer that extracts text from PDFs, calculates a heuristic ATS-style score, compares resumes with a job description, identifies selected skill gaps, and provides rule-based suggestions.
+Career platform that extracts text from PDF resumes, calculates an ATS-style completeness score, estimates similarity with a target role, and highlights supported skill gaps. Candidate tools include a resume builder, conservative rewrite, cover-letter drafts, learning guidance, interview practice, and downloadable reports. Recruiters can manage roles and applicants, rank resumes, and export CSV reports. Career helpers use local rules and templates; report email is optional when SMTP is configured.
 
 [Live demo](https://ai-resume-analyzer-rachit.onrender.com/) · [GitHub repository](https://github.com/rachit1807/AI_RESUME_ANALYZER)
 
-**Stack:** Python, Flask, pdfplumber, scikit-learn
+**Stack:** Python, Flask, pdfplumber, scikit-learn, SQLAlchemy, PostgreSQL
 
 ---
 
