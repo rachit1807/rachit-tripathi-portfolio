@@ -104,6 +104,16 @@ Enterprise project management platform with multi-workspace access, team roles, 
 
 **Stack:** React, Node.js, Express, MongoDB, Mongoose
 
+### TeamHub RBAC
+
+Team collaboration app for shared workspaces, projects, and tasks. Includes JWT authentication, administrator and workspace roles, task assignments, a Kanban board, comments, search, and dashboards. The hosted app uses PostgreSQL; local development uses SQLite.
+
+[Live demo](https://teamhub-rbac.onrender.com) · [GitHub repository](https://github.com/rachit1807/TeamHub-RBAC)
+
+**Stack:** Node.js, Express, Sequelize, PostgreSQL, SQLite, JWT
+
+---
+
 ### AI Code Review
 
 AI-powered code review platform that analyzes code quality, returns review feedback, and creates downloadable reports.
