@@ -29,6 +29,7 @@ Other work, including [ProductHub API](https://github.com/rachit1807/ProductHub-
 
 - Semantic HTML, responsive CSS, and vanilla JavaScript
 - Hosted on GitHub Pages at the existing URL above
+- CSS and JavaScript asset URLs are versioned so deployments can refresh cached browser assets without changing the site URL
 - Project screenshots are from the linked repositories; sample dashboard values are identified as sample data
 - Skills are grouped by languages, frontend, backend and APIs, data, AI and machine learning, and tools and practices
 - The contact section links to email directly; this static site does not claim to submit contact forms
