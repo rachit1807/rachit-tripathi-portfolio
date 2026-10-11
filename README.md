@@ -18,7 +18,7 @@ The portfolio highlights five projects with implementation notes, architecture f
 4. **[AI Resume Analyzer](https://github.com/rachit1807/AI_RESUME_ANALYZER)** — Flask career platform with PDF text extraction, heuristic ATS-style scoring, TF-IDF role matching, candidate tools, and recruiter workflows. The repository includes `pytest` tests; its README describes isolated SQLite test data and no external email or AI calls. Career helpers use local rules and templates. [Live demo](https://ai-resume-analyzer-rachit.onrender.com/)
 5. **[SmartLoanAI](https://github.com/rachit1807/SmartLoanAI)** — Educational React and FastAPI loan workflow demo with an ML estimate, repayment calculations, and a separate document review flow. The repository includes `backend/test_decision_isolation.py`, a regression script using in-memory SQLite, and FastAPI documentation at `/docs`. Uploaded files on the hosted service use local storage and may not survive a restart or redeploy. Use sample data only. [Frontend demo](https://smart-loan-ai-one.vercel.app/) · [API docs](https://smartloanai-api.onrender.com/docs)
 
-Other work, including [ProductHub API](https://github.com/rachit1807/ProductHub-API), FormGuard, FitForge, and Premium Counter App, is linked from the portfolio and [GitHub profile](https://github.com/rachit1807).
+Other work, including [ProductHub API](https://github.com/rachit1807/ProductHub-API), FormGuard, FitForge, and Premium Counter App, is available from the [GitHub profile](https://github.com/rachit1807).
 
 ## Internship experience
 
@@ -33,7 +33,7 @@ Other work, including [ProductHub API](https://github.com/rachit1807/ProductHub-
 ## Portfolio implementation
 
 - Semantic HTML, responsive CSS, and vanilla JavaScript
-- DM Sans and Space Grotesk typography, with subtle ambient lighting and greeting motion; animations respect reduced-motion preferences
+- DM Sans and Space Grotesk typography with responsive sizing, subtle ambient lighting, and greeting motion; nonessential animations respect reduced-motion preferences
 - Hosted on GitHub Pages at the existing URL above
 - CSS and JavaScript asset URLs are versioned so deployments can refresh cached browser assets without changing the site URL
 - Project screenshots are from the linked repositories; sample dashboard values are identified as sample data

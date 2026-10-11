@@ -2026,6 +2026,10 @@ body{
     .certificate-card{padding:26px 22px;}
 }
 
+@media(min-width:993px) and (max-width:1360px){
+    .hero-left h1{font-size:clamp(3rem,5.3vw,4.7rem);white-space:nowrap;}
+}
+
 @media(prefers-reduced-motion:reduce){
     .wave-hand,.hero::before,.hero::after,.hero-right::before,.profile-card{animation:none!important;}
 }
