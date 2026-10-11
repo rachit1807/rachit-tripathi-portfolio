@@ -1,6 +1,6 @@
 # Rachit Tripathi — Developer Portfolio
 
-A responsive portfolio for my software projects, internship contributions, technical skills, training, and education.
+A responsive portfolio for my software projects, internship contributions, technical skills, training, and education, presented in a cinematic editorial layout.
 
 ## Live site
 
@@ -33,7 +33,8 @@ Other work, including [ProductHub API](https://github.com/rachit1807/ProductHub-
 ## Portfolio implementation
 
 - Semantic HTML, responsive CSS, and vanilla JavaScript
-- DM Sans and Space Grotesk typography with responsive sizing, subtle ambient lighting, and greeting motion; nonessential animations respect reduced-motion preferences
+- A redesigned visual system with a luminous dark hero, glass navigation, editorial section layouts, and a featured-project case-study gallery
+- Ambient aurora lighting, a moving interests strip, portrait orbit details, pointer-tracked card highlights, hover motion, and scroll reveals; nonessential motion respects reduced-motion preferences
 - Hosted on GitHub Pages at the existing URL above
 - CSS and JavaScript asset URLs are versioned so deployments can refresh cached browser assets without changing the site URL
 - Project screenshots are from the linked repositories; sample dashboard values are identified as sample data

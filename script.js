@@ -1,5 +1,6 @@
 const menuBtn = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
+const siteHeader = document.querySelector(".site-header");
 
 function setMenuOpen(open) {
     if (!menuBtn || !navLinks) return;
@@ -21,6 +22,13 @@ if (menuBtn && navLinks) {
     navLinks.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => setMenuOpen(false));
     });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && navLinks.classList.contains("active")) {
+            setMenuOpen(false);
+            menuBtn.focus();
+        }
+    });
 }
 
 const topBtn = document.getElementById("topBtn");
@@ -28,6 +36,7 @@ const progressBar = document.getElementById("progress-bar");
 
 function updateScrollState() {
     if (topBtn) topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    if (siteHeader) siteHeader.classList.toggle("scrolled", window.scrollY > 12);
 
     if (progressBar) {
         const scrollableHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -71,8 +80,30 @@ if (!reducedMotion && "IntersectionObserver" in window) {
         });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll(".section,.project-card,.skill-card,.timeline-item,.certificate-card,.education-card,.achievement-card").forEach((element) => {
+    document.querySelectorAll("main > .section,.project-card,.skill-card,.timeline-item,.certificate-card,.education-card,.achievement-card").forEach((element, index) => {
+        element.style.setProperty("--reveal-delay", `${(index % 4) * 75}ms`);
         element.classList.add("hidden");
         observer.observe(element);
+    });
+}
+
+if (!reducedMotion && window.matchMedia("(pointer: fine)").matches) {
+    const hero = document.querySelector(".hero");
+    hero?.addEventListener("pointermove", (event) => {
+        const bounds = hero.getBoundingClientRect();
+        hero.style.setProperty("--spot-x", `${event.clientX - bounds.left}px`);
+        hero.style.setProperty("--spot-y", `${event.clientY - bounds.top}px`);
+    }, { passive: true });
+
+    document.querySelectorAll(".project-card,.skill-card").forEach((card) => {
+        card.addEventListener("pointermove", (event) => {
+            const bounds = card.getBoundingClientRect();
+            card.style.setProperty("--mx", `${event.clientX - bounds.left}px`);
+            card.style.setProperty("--my", `${event.clientY - bounds.top}px`);
+        }, { passive: true });
+        card.addEventListener("pointerleave", () => {
+            card.style.removeProperty("--mx");
+            card.style.removeProperty("--my");
+        });
     });
 }
