@@ -1,338 +1,46 @@
 # Rachit Tripathi — Developer Portfolio
 
-A modern, responsive, and professional developer portfolio showcasing my software engineering projects, technical skills, certifications, internship experience, and academic background.
+A responsive portfolio for my software projects, internship contributions, technical skills, training, and education.
 
-The portfolio serves as a centralized platform to present my work, demonstrate practical development experience, and provide recruiters with quick access to my projects, resume, and professional profiles.
+## Live site
 
----
+[rachit1807.github.io/rachit-tripathi-portfolio](https://rachit1807.github.io/rachit-tripathi-portfolio/)
 
-## Live Portfolio
+This is the existing GitHub Pages URL for the project.
 
-**Website**
+## Featured projects
 
-https://rachit1807.github.io/rachit-tripathi-portfolio/
+The portfolio highlights five projects with implementation notes, architecture flows, quality evidence, and demo guidance where available.
 
----
+1. **[TaskFlow Pro](https://github.com/rachit1807/TaskFlow-Pro)** — React, Vite, Express, and MongoDB project management app with workspaces, roles, Kanban boards, task assignment, comments, attachments, notifications, and activity history. [Live demo](https://taskflow-pro-web.onrender.com/)
+2. **[AI Code Review](https://github.com/rachit1807/AI-Code-Review)** — CodeMore internship capstone using a React client, Express API, MongoDB, and an Ollama model for structured code review feedback. The repository documents API routes and manual Postman checks; its test script is a placeholder, not an automated test suite. [Live demo](https://ai-code-review-n5gt.onrender.com/)
+3. **[TeamHub RBAC](https://github.com/rachit1807/TeamHub-RBAC)** — Node.js and Express team workspace app with JWT authentication, role checks, PostgreSQL on the hosted demo, and SQLite for local runs. The repository includes API documentation and a Postman collection. GitHub Actions runs `npm run check` on pushes and pull requests; this checks JavaScript syntax. A Render inspection on October 11, 2026 found its PostgreSQL database available, with expiry scheduled for November 9, 2026. The free web service can take 50 seconds or more to wake after inactivity. [Live demo](https://teamhub-rbac.onrender.com/) · [API health](https://teamhub-rbac.onrender.com/api/health)
+4. **[AI Resume Analyzer](https://github.com/rachit1807/AI_RESUME_ANALYZER)** — Flask career platform with PDF text extraction, heuristic ATS-style scoring, TF-IDF role matching, candidate tools, and recruiter workflows. The repository includes `pytest` tests; its README describes isolated SQLite test data and no external email or AI calls. Career helpers use local rules and templates. [Live demo](https://ai-resume-analyzer-rachit.onrender.com/)
+5. **[SmartLoanAI](https://github.com/rachit1807/SmartLoanAI)** — Educational React and FastAPI loan workflow demo with an ML estimate, repayment calculations, and a separate document review flow. The repository includes `backend/test_decision_isolation.py`, a regression script using in-memory SQLite, and FastAPI documentation at `/docs`. Uploaded files on the hosted service use local storage and may not survive a restart or redeploy. Use sample data only. [Frontend demo](https://smart-loan-ai-one.vercel.app/) · [API docs](https://smartloanai-api.onrender.com/docs)
 
-## Repository
+Other work, including [ProductHub API](https://github.com/rachit1807/ProductHub-API), FormGuard, FitForge, and Premium Counter App, is linked from the portfolio and [GitHub profile](https://github.com/rachit1807).
 
-https://github.com/rachit1807/rachit-tripathi-portfolio
+## Internship experience
 
----
+- **Full-Stack Web Development Intern, CodeMore** — September 29, 2026–present, remote. The AI Code Review capstone combines a React frontend, backend APIs, authentication and authorization, and database integration.
+- **Front-End Development Intern, Codveda Technologies** — August 26–September 27, 2026, remote. Built the FitForge responsive landing page and Premium Counter App, and collaborated on cross-device UI work using Git and GitHub.
 
-## Overview
+## Portfolio implementation
 
-This portfolio highlights my journey as an aspiring Software Engineer with experience in Full-Stack Web Development, Front-End Development, Artificial Intelligence, Machine Learning, and Backend Development.
+- Semantic HTML, responsive CSS, and vanilla JavaScript
+- Hosted on GitHub Pages at the existing URL above
+- Project screenshots are from the linked repositories; sample dashboard values are identified as sample data
+- Skills are grouped by languages, frontend, backend and APIs, data, AI and machine learning, and tools and practices
+- The contact section links to email directly; this static site does not claim to submit contact forms
 
-It has been designed with a clean user interface, responsive layouts, and modern web development practices to ensure an excellent viewing experience across desktop, tablet, and mobile devices.
+## Local preview
 
----
+Clone the repository and open `index.html` in a browser, or serve the folder with a local static server. No build step is required.
 
-## Features
+## Contact
 
-- Responsive Design
-- Professional Landing Page
-- About Me Section
-- Technical Skills Showcase
-- Experience Timeline
-- Featured Projects
-- Certifications & Achievements
-- Education Timeline
-- Resume Download
-- Contact Information
-- Smooth Navigation
-- Mobile-Friendly Layout
-- GitHub & LinkedIn Integration
+- [Email](mailto:tripathirachit486@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/rachittripathi2509/)
+- [GitHub](https://github.com/rachit1807)
 
----
-
-## Tech Stack
-
-### This portfolio
-
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- GitHub Pages
-
-### Technologies used across featured projects
-
-- **Languages:** JavaScript, Python, Java, SQL
-- **Frontend:** HTML5, CSS3, React
-- **Backend and APIs:** Node.js, Express, Flask, FastAPI
-- **Data:** MongoDB, PostgreSQL, browser Local Storage
-- **AI and machine learning:** scikit-learn, NLP, Ollama
-- **Tools:** Git, GitHub, VS Code
-
----
-
-## Internship Experience
-
-### Full-Stack Web Development Intern
-
-**CodeMore**
-
-September 2026 – Present
-
-- Working on Full-Stack Web Development projects
-- Building responsive web applications
-- Following Git & GitHub workflow
-- Collaborating on production-oriented development tasks
-
----
-
-### Front-End Development Intern
-
-**Codveda Technologies**
-
-August 2026 – September 2026
-
-- Developed responsive landing pages
-- Built interactive JavaScript applications
-- Implemented responsive UI
-- Worked with Git and GitHub version control
-
----
-
-## Featured Projects
-
-### TaskFlow Pro
-
-Enterprise project management platform with multi-workspace access, team roles, project-specific Kanban boards, task assignment, comments, attachments, notifications, and activity history.
-
-[Live demo](https://taskflow-pro-web.onrender.com/) · [GitHub repository](https://github.com/rachit1807/TaskFlow-Pro)
-
-**Stack:** React, Node.js, Express, MongoDB, Mongoose
-
-### TeamHub RBAC
-
-Team collaboration app for shared workspaces, projects, and tasks. Includes JWT authentication, administrator and workspace roles, task assignments, a Kanban board, comments, search, and dashboards. The hosted app uses PostgreSQL; local development uses SQLite.
-
-[Live demo](https://teamhub-rbac.onrender.com) · [GitHub repository](https://github.com/rachit1807/TeamHub-RBAC)
-
-**Stack:** Node.js, Express, Sequelize, PostgreSQL, SQLite, JWT
-
----
-
-### AI Code Review
-
-AI-powered code review platform that analyzes code quality, returns review feedback, and creates downloadable reports.
-
-[Live demo](https://ai-code-review-n5gt.onrender.com/) · [GitHub repository](https://github.com/rachit1807/AI-Code-Review)
-
-**Stack:** React, Node.js, Express, Ollama, MongoDB
-
----
-
-### Secure Auth API
-
-Secure REST API with registration and login, JWT authentication, password hashing, protected routes, and profile management.
-
-[GitHub repository](https://github.com/rachit1807/Secure-Auth-API)
-
-**Stack:** Node.js, Express, MongoDB, JWT
-
----
-
-### Git Version Control Practice
-
-Practical Git and GitHub workflows covering commits, branches, merges, and a GitHub Pages demo.
-
-[Live demo](https://rachit1807.github.io/git-version-control-practice/) · [GitHub repository](https://github.com/rachit1807/git-version-control-practice)
-
-**Stack:** Git, GitHub, HTML
-
----
-
-### FitForge Landing Page
-
-Responsive fitness website with a BMI calculator, membership modal, testimonials, gallery, FAQs, and contact section.
-
-[Live demo](https://rachit1807.github.io/Task-1-FitForge-Landing-Page/) · [GitHub repository](https://github.com/rachit1807/Task-1-FitForge-Landing-Page)
-
-**Stack:** HTML, CSS, JavaScript
-
----
-
-### AI Resume Analyzer & Career Development Platform
-
-Career platform that extracts text from PDF resumes, calculates an ATS-style completeness score, estimates similarity with a target role, and highlights supported skill gaps. Candidate tools include a resume builder, conservative rewrite, cover-letter drafts, learning guidance, interview practice, and downloadable reports. Recruiters can manage roles and applicants, rank resumes, and export CSV reports. Career helpers use local rules and templates; report email is optional when SMTP is configured.
-
-[Live demo](https://ai-resume-analyzer-rachit.onrender.com/) · [GitHub repository](https://github.com/rachit1807/AI_RESUME_ANALYZER)
-
-**Stack:** Python, Flask, pdfplumber, scikit-learn, SQLAlchemy, PostgreSQL
-
----
-
-### SmartLoanAI
-
-Full-stack loan management project with ML eligibility prediction, document verification, admin workflows, analytics, and EMI calculations.
-
-[Live demo](https://smart-loan-ai-one.vercel.app/) · [GitHub repository](https://github.com/rachit1807/SmartLoanAI)
-
-**Stack:** React, FastAPI, machine learning
-
----
-
-### FormGuard
-
-Responsive registration form with real-time field validation, password strength feedback, confirmation checks, and browser-based user storage.
-
-[Live demo](https://rachit1807.github.io/FormGuard/) · [GitHub repository](https://github.com/rachit1807/FormGuard)
-
-**Stack:** HTML, CSS, JavaScript, Local Storage
-
----
-
-### ProductHub API
-
-Full-stack product catalog with search, filters, sorting, favorites, catalog statistics, product management, and REST API CRUD operations.
-
-[Live demo](https://product-hub-api-weld.vercel.app/) · [GitHub repository](https://github.com/rachit1807/ProductHub-API)
-
-**Stack:** Node.js, Express, JavaScript, REST API
-
----
-
-### Premium Counter App
-
-Interactive counter with light and dark themes, progress tracking, achievement badges, saved statistics, a live clock, and keyboard shortcuts.
-
-[Live demo](https://rachit1807.github.io/Premium-Counter-App/) · [GitHub repository](https://github.com/rachit1807/Premium-Counter-App)
-
-**Stack:** HTML, CSS, JavaScript, Local Storage
-
----
-
-## Technical Skills
-
-### Languages
-
-- Java
-- Python
-- SQL
-
-### Web Technologies
-
-- HTML5
-- CSS3
-- JavaScript
-- Node.js
-
-### Database
-
-- PostgreSQL
-- MongoDB
-
-### Machine Learning
-
-- Model Training
-- Natural Language Processing
-- Scikit-learn
-
-### Version Control
-
-- Git
-- GitHub
-
----
-
-## Certifications
-
-### Web Development Training
-
-Acmegrade × Mood Indigo, IIT Bombay
-
----
-
-### Java Programming Training
-
-Learnovate Enterprises
-
----
-
-### Department Mentor
-
-Learnovate Enterprises
-
-Selected as Department Mentor for the Soft Skills Training Program.
-
----
-
-## Education
-
-**Bachelor of Technology**
-
-Information Technology
-
-Babu Banarasi Das Northern India Institute of Technology
-
-Dr. A.P.J. Abdul Kalam Technical University
-
-Expected Graduation: 2027
-
----
-
-## Resume
-
-The latest version of my resume can be downloaded directly from the portfolio.
-
----
-
-## Connect With Me
-
-**Email**
-
-tripathirachit486@gmail.com
-
-**LinkedIn**
-
-https://www.linkedin.com/in/rachittripathi2509/
-
-**GitHub**
-
-https://github.com/rachit1807
-
----
-
-## Local Setup
-
-Clone the repository
-
-```bash
-git clone https://github.com/rachit1807/rachit-tripathi-portfolio.git
-```
-
-Navigate into the project
-
-```bash
-cd rachit-tripathi-portfolio
-```
-
-Open the project
-
-```bash
-index.html
-```
-
-or launch using Live Server in Visual Studio Code.
-
----
-
-## Future Improvements
-
-- Contact Form Backend
-- Blog Section
-- Dark/Light Theme Toggle
-- GitHub Contribution Graph
-- Project Filtering
-- Visitor Analytics
-- Performance Optimization
-
----
-
-## License
-
-This project is intended for educational and portfolio purposes.
-
-© 2026 Rachit Tripathi. All Rights Reserved.
+© 2026 Rachit Tripathi.
