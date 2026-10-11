@@ -34,7 +34,8 @@ Other work, including [ProductHub API](https://github.com/rachit1807/ProductHub-
 
 - Semantic HTML, responsive CSS, and vanilla JavaScript
 - A redesigned visual system with a luminous dark hero, glass navigation, editorial section layouts, and a featured-project case-study gallery
-- Ambient aurora lighting, a moving interests strip, portrait orbit details, pointer-tracked card highlights, hover motion, and scroll reveals; nonessential motion respects reduced-motion preferences
+- Ambient aurora lighting, a moving interests strip, portrait orbit details, pointer-tracked card highlights, hover motion, and scroll reveals
+- Click the hero portrait for a complete 360° spin; click a project, certificate, profile, or other portfolio card for a short, localized lightning strike. Both interactions support keyboard focus where applicable, and reduced-motion preferences replace the animated strike with a brief static outline.
 - Hosted on GitHub Pages at the existing URL above
 - CSS and JavaScript asset URLs are versioned so deployments can refresh cached browser assets without changing the site URL
 - Project screenshots are from the linked repositories; sample dashboard values are identified as sample data
