@@ -114,7 +114,9 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .
 .profile-card::after { position: absolute; z-index: -1; inset: -54px; content: ''; border: 1px dashed rgba(117,177,242,.2); border-radius: 50% 50% 35px 35px; transform: rotate(-11deg); animation: orbit-turn 32s linear infinite; }
 .profile-card:hover { transform: perspective(1000px) rotateY(0) translateY(-5px); box-shadow: 0 44px 100px rgba(0,0,0,.35), 0 0 85px rgba(50,132,255,.28); }
 .profile-card:focus-visible { outline: 3px solid #8fe8ff; outline-offset: 7px; }
-.profile-card.is-spinning img { will-change: transform; animation: portrait-spin 1.15s cubic-bezier(.22,.75,.25,1) both; }
+.profile-card.is-orbiting img { will-change: transform; animation: portrait-orbit 1.15s ease-in-out both; }
+.profile-card.is-orbiting .profile-spin-cue i { animation: icon-turn 1.15s linear both; }
+.profile-card.is-orbiting::after { animation: orbit-turn 1.15s linear 1; }
 .profile-card img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; border: 1px solid rgba(255,255,255,.65); border-radius: 48% 48% 15px 15px; background: #f8f8f8; }
 .profile-chip { position: absolute; z-index: 2; display: flex; align-items: center; gap: 9px; padding: 11px 15px; border: 1px solid rgba(255,255,255,.2); border-radius: 13px; color: #eaf3ff; background: rgba(11, 27, 46, .78); box-shadow: 0 14px 35px rgba(0,0,0,.22); backdrop-filter: blur(14px); font-size: 11px; font-weight: 700; animation: bob 4.8s ease-in-out infinite; }
 .profile-chip i { color: var(--cyan); }
@@ -340,7 +342,7 @@ footer::before { position: absolute; top: 0; left: 50%; width: min(600px, 80%); 
 @keyframes ticker { to { transform: translateX(-50%); } }
 @keyframes detail-in { from { opacity: .2; transform: translateY(-7px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes icon-turn { to { transform: rotate(360deg); } }
-@keyframes portrait-spin { 0% { transform: perspective(1000px) rotateY(0) rotateZ(0) scale(1); } 42% { transform: perspective(1000px) rotateY(10deg) rotateZ(185deg) scale(1.035); } 100% { transform: perspective(1000px) rotateY(0) rotateZ(360deg) scale(1); } }
+@keyframes portrait-orbit { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 12.5% { transform: translate3d(10px,-10px,0) scale(1.01); } 25% { transform: translate3d(14px,0,0) scale(1.02); } 37.5% { transform: translate3d(10px,10px,0) scale(1.025); } 50% { transform: translate3d(0,14px,0) scale(1.035); } 62.5% { transform: translate3d(-10px,10px,0) scale(1.025); } 75% { transform: translate3d(-14px,0,0) scale(1.02); } 87.5% { transform: translate3d(-10px,-10px,0) scale(1.01); } }
 @keyframes lightning-wash { 0%, 100% { opacity: 0; } 8% { opacity: .8; } 17% { opacity: .16; } 27% { opacity: .72; } 43% { opacity: .08; } }
 @keyframes lightning-glow { 0%, 100% { opacity: 0; } 10% { opacity: .9; } 24% { opacity: .15; } 35% { opacity: .7; } 55% { opacity: 0; } }
 @keyframes lightning-edge { 0%, 100% { opacity: 0; } 11% { opacity: .95; } 35% { opacity: .25; } 55% { opacity: 0; } }

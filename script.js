@@ -74,12 +74,12 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
 const profileCard = document.querySelector(".profile-card");
 profileCard?.addEventListener("click", () => {
     if (reducedMotion) return;
-    profileCard.classList.remove("is-spinning");
+    profileCard.classList.remove("is-orbiting");
     void profileCard.offsetWidth;
-    profileCard.classList.add("is-spinning");
+    profileCard.classList.add("is-orbiting");
 });
 profileCard?.addEventListener("animationend", (event) => {
-    if (event.animationName === "portrait-spin") profileCard.classList.remove("is-spinning");
+    if (event.animationName === "portrait-orbit") profileCard.classList.remove("is-orbiting");
 });
 
 const lightningTargets = ".profile-card,.about-image,.about-content,.info-box,.skill-card,.timeline-content,.project-card,.certificate-card,.education-card,.achievement-card,.contact-info,.contact-form";
