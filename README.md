@@ -25,9 +25,15 @@ Other work, including [ProductHub API](https://github.com/rachit1807/ProductHub-
 - **Full-Stack Web Development Intern, CodeMore** — September 29, 2026–present, remote. The AI Code Review capstone combines a React frontend, backend APIs, authentication and authorization, and database integration.
 - **Front-End Development Intern, Codveda Technologies** — August 26–September 27, 2026, remote. Built the FitForge responsive landing page and Premium Counter App, and collaborated on cross-device UI work using Git and GitHub.
 
+## Training and recognition
+
+- **Front-End Development Internship certificate, Codveda Technologies** — The certificate records internship work from August to September 2026 and is dated October 5, 2026. The original certificate image is included in the portfolio.
+- **Department Mentor, Learnovate Enterprises** — Soft Skills Training Program, December 2024.
+
 ## Portfolio implementation
 
 - Semantic HTML, responsive CSS, and vanilla JavaScript
+- DM Sans and Space Grotesk typography, with subtle ambient lighting and greeting motion; animations respect reduced-motion preferences
 - Hosted on GitHub Pages at the existing URL above
 - CSS and JavaScript asset URLs are versioned so deployments can refresh cached browser assets without changing the site URL
 - Project screenshots are from the linked repositories; sample dashboard values are identified as sample data
