@@ -71,6 +71,22 @@ window.addEventListener("scroll", () => {
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+const developerIcons = ["fa-code", "fa-laptop-code", "fa-terminal", "fa-database", "fa-microchip", "fa-network-wired", "fa-bug", "fa-server"];
+document.querySelectorAll("main > section, footer").forEach((surface, index) => {
+    const atmosphere = document.createElement("div");
+    atmosphere.className = "developer-atmosphere";
+    atmosphere.setAttribute("aria-hidden", "true");
+
+    [index % developerIcons.length, (index + 3) % developerIcons.length].forEach((iconIndex, slot) => {
+        const icon = document.createElement("i");
+        icon.className = `developer-symbol developer-symbol-${slot + 1} fas ${developerIcons[iconIndex]}`;
+        icon.setAttribute("aria-hidden", "true");
+        atmosphere.append(icon);
+    });
+
+    surface.prepend(atmosphere);
+});
+
 const profileCard = document.querySelector(".profile-card");
 profileCard?.addEventListener("click", () => {
     if (reducedMotion) return;
@@ -83,6 +99,7 @@ profileCard?.addEventListener("animationend", (event) => {
 });
 
 const lightningTargets = ".profile-card,.about-image,.about-content,.info-box,.skill-card,.timeline-content,.project-card,.certificate-card,.education-card,.achievement-card,.contact-info,.contact-form";
+const lightLightningTargets = ".about-image,.about-content,.info-box,.timeline-content,.certificate-card,.education-card,.achievement-card";
 const strikeTimers = new WeakMap();
 const svgNamespace = "http://www.w3.org/2000/svg";
 
@@ -99,11 +116,12 @@ function strikeBox(target, event) {
     const previousTimer = strikeTimers.get(target);
     if (previousTimer) clearTimeout(previousTimer);
     target.querySelector(":scope > .lightning-strike")?.remove();
-    target.classList.remove("lightning-struck", "lightning-static");
+    target.classList.remove("lightning-struck", "lightning-static", "lightning-static-light");
 
     if (reducedMotion) {
         target.classList.add("lightning-static");
-        strikeTimers.set(target, setTimeout(() => target.classList.remove("lightning-static"), 650));
+        if (target.matches(lightLightningTargets)) target.classList.add("lightning-static-light");
+        strikeTimers.set(target, setTimeout(() => target.classList.remove("lightning-static", "lightning-static-light"), 650));
         return;
     }
 
@@ -129,6 +147,7 @@ function strikeBox(target, event) {
 
     const flash = document.createElement("span");
     flash.className = "lightning-strike";
+    if (target.matches(lightLightningTargets)) flash.classList.add("lightning-on-light");
     flash.setAttribute("aria-hidden", "true");
     flash.style.setProperty("--strike-x", `${originX}px`);
     flash.style.setProperty("--strike-y", `${originY}px`);

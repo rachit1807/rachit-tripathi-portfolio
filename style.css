@@ -83,6 +83,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .
 .hero-atmosphere span:nth-child(2) { right: 27%; bottom: -52%; width: 47vw; background: #5361ed; animation: aurora-drift 19s ease-in-out -6s infinite alternate-reverse; }
 .hero-atmosphere span:nth-child(3) { top: 12%; left: -28%; width: 42vw; background: #1ebdd1; opacity: .09; animation: aurora-drift 23s ease-in-out -9s infinite alternate; }
 .hero-content { width: min(100%, var(--content)); margin: auto; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr); align-items: center; gap: clamp(38px, 7vw, 112px); }
+.hero-content { position: relative; z-index: 1; }
 .hero-left { position: relative; z-index: 2; padding: 12px 0 10px; animation: rise-in .95s .08s both var(--ease); }
 .hero-eyebrow { display: flex; align-items: center; gap: 12px; margin: 0 0 30px; color: #aabbd2; font-size: 10px; font-weight: 700; letter-spacing: .19em; }
 .status-dot, .availability-dot { position: relative; width: 7px; height: 7px; flex: 0 0 auto; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 14px rgba(86,222,239,.9); }
@@ -315,8 +316,26 @@ main > .section { position: relative; padding: clamp(88px, 9vw, 136px) max(5vw, 
 .lightning-strike path { fill: none; stroke-linecap: square; stroke-linejoin: bevel; vector-effect: non-scaling-stroke; stroke-dasharray: 100; stroke-dashoffset: 100; animation: bolt-draw .42s cubic-bezier(.2,.7,.25,1) .02s both; }
 .lightning-strike .bolt-glow { stroke: rgba(72,174,255,.92); stroke-width: 9; filter: blur(4px); }
 .lightning-strike .bolt-core { stroke: #e5fdff; stroke-width: 2.3; filter: drop-shadow(0 0 4px #72e7ff) drop-shadow(0 0 10px #438cff); }
+.lightning-strike.lightning-on-light { mix-blend-mode: normal; animation: lightning-on-light-wash .95s ease-out both; }
+.lightning-on-light path { animation-duration: .56s; }
+.lightning-on-light::before { background: radial-gradient(ellipse at var(--strike-x, 50%) var(--strike-y, 50%), rgba(23,102,232,.42), rgba(24,145,235,.28) 24%, transparent 62%); }
+.lightning-on-light::after { border-color: rgba(23,102,232,.98); box-shadow: inset 0 0 28px rgba(23,102,232,.24), 0 0 23px rgba(23,102,232,.42); }
+.lightning-on-light .bolt-glow { stroke: #1766e8; stroke-width: 15; filter: blur(1.5px); }
+.lightning-on-light .bolt-core { stroke: #082f9b; stroke-width: 4.5; filter: drop-shadow(0 0 3px #58aaff) drop-shadow(0 0 8px #3277ed); }
 .lightning-struck { animation: thunder-impact .62s ease-out both; }
 .lightning-static { outline: 2px solid rgba(137,226,255,.95); outline-offset: 3px; }
+.lightning-static-light { outline-color: rgba(23,102,232,.95); box-shadow: 0 0 0 5px rgba(23,102,232,.1); }
+.developer-atmosphere { position: absolute; z-index: 0; inset: 0; overflow: hidden; pointer-events: none; }
+main > section:not(.hero) { position: relative; isolation: isolate; }
+main > section:not(.hero) > :not(.developer-atmosphere) { position: relative; z-index: 1; }
+footer { isolation: isolate; }
+footer > :not(.developer-atmosphere) { position: relative; z-index: 1; }
+.developer-symbol { position: absolute; display: grid; place-items: center; width: 36px; height: 36px; color: rgba(23,102,232,.38); font-size: 19px; filter: drop-shadow(0 0 8px rgba(67,140,255,.22)); animation: developer-drift 17s ease-in-out infinite; }
+.developer-symbol-1 { top: 22%; left: 1.8%; --drift-x: 9px; --drift-y: -20px; }
+.developer-symbol-2 { right: 1.8%; bottom: 17%; --drift-x: -10px; --drift-y: 22px; animation-delay: -8s; animation-duration: 21s; }
+.hero .developer-symbol, .skills .developer-symbol, .projects .developer-symbol, .contact .developer-symbol { color: rgba(157,210,255,.46); filter: drop-shadow(0 0 9px rgba(83,169,255,.44)); }
+.developer-symbol:nth-child(odd) { animation-direction: alternate; }
+.developer-symbol:nth-child(even) { animation-direction: alternate-reverse; }
 footer { position: relative; padding: 46px 24px 36px; overflow: hidden; color: #c2cfdf; background: #050d17; text-align: center; }
 footer::before { position: absolute; top: 0; left: 50%; width: min(600px, 80%); height: 1px; content: ''; transform: translateX(-50%); background: linear-gradient(90deg, transparent, rgba(96,170,248,.6), rgba(151,130,255,.6), transparent); }
 .footer-content { position: relative; width: min(100%, 800px); margin: auto; }
@@ -341,9 +360,11 @@ footer::before { position: absolute; top: 0; left: 50%; width: min(600px, 80%); 
 @keyframes bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
 @keyframes ticker { to { transform: translateX(-50%); } }
 @keyframes detail-in { from { opacity: .2; transform: translateY(-7px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes developer-drift { from { translate: 0 0; rotate: -8deg; opacity: .48; } 50% { translate: var(--drift-x, 10px) var(--drift-y, -20px); rotate: 8deg; opacity: .78; } to { translate: 0 0; rotate: -8deg; opacity: .48; } }
 @keyframes icon-turn { to { transform: rotate(360deg); } }
 @keyframes portrait-orbit { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 12.5% { transform: translate3d(10px,-10px,0) scale(1.01); } 25% { transform: translate3d(14px,0,0) scale(1.02); } 37.5% { transform: translate3d(10px,10px,0) scale(1.025); } 50% { transform: translate3d(0,14px,0) scale(1.035); } 62.5% { transform: translate3d(-10px,10px,0) scale(1.025); } 75% { transform: translate3d(-14px,0,0) scale(1.02); } 87.5% { transform: translate3d(-10px,-10px,0) scale(1.01); } }
 @keyframes lightning-wash { 0%, 100% { opacity: 0; } 8% { opacity: .8; } 17% { opacity: .16; } 27% { opacity: .72; } 43% { opacity: .08; } }
+@keyframes lightning-on-light-wash { 0%, 100% { opacity: 0; } 7% { opacity: .95; } 18% { opacity: .72; } 29% { opacity: .92; } 45% { opacity: .62; } 68% { opacity: .32; } }
 @keyframes lightning-glow { 0%, 100% { opacity: 0; } 10% { opacity: .9; } 24% { opacity: .15; } 35% { opacity: .7; } 55% { opacity: 0; } }
 @keyframes lightning-edge { 0%, 100% { opacity: 0; } 11% { opacity: .95; } 35% { opacity: .25; } 55% { opacity: 0; } }
 @keyframes bolt-draw { to { stroke-dashoffset: 0; } }
