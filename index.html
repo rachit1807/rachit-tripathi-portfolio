@@ -28,7 +28,7 @@
     />
     <meta
       property="og:image"
-      content="https://rachit1807.github.io/rachit-tripathi-portfolio/assets/images/rachit-portrait-4k.jpg"
+      content="https://rachit1807.github.io/rachit-tripathi-portfolio/assets/images/profile.png"
     />
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,10 +41,20 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css?v=emerald-3" />
+    <link rel="stylesheet" href="style.css?v=liquid-1" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
+    <canvas id="liquid-canvas" aria-hidden="true" hidden></canvas>
+    <button
+      id="motion-toggle"
+      class="motion-toggle"
+      type="button"
+      aria-pressed="false"
+      hidden
+    >
+      Pause motion
+    </button>
     <div id="progress-bar" aria-hidden="true"></div>
     <header class="site-header">
       <nav class="navbar" aria-label="Primary navigation">
@@ -139,10 +149,10 @@
             >
               <span class="portrait-photo">
                 <img
-                  src="assets/images/rachit-portrait-4k.jpg"
-                  width="2268"
-                  height="4032"
-                  alt="Rachit Tripathi wearing glasses and a navy shirt"
+                  src="assets/images/portrait.webp"
+                  width="800"
+                  height="800"
+                  alt="Rachit Tripathi"
                   fetchpriority="high"
                 />
               </span>
@@ -990,10 +1000,10 @@
           <div class="about-image">
             <span class="about-photo">
               <img
-                src="assets/images/rachit-portrait-4k.jpg"
-                width="2268"
-                height="4032"
-                alt="Rachit Tripathi wearing glasses and a navy shirt"
+                src="assets/images/profile.png"
+                width="1402"
+                height="1122"
+                alt="Rachit Tripathi"
                 loading="lazy"
                 decoding="async"
               />
@@ -1210,6 +1220,76 @@
               <li>GitHub Pages</li>
             </ul>
           </article>
+        </div>
+        <div class="floating-tools" aria-labelledby="floating-tools-title">
+          <div class="tool-pool-heading">
+            <div>
+              <p class="eyebrow">IN MY ELEMENT</p>
+              <h3 id="floating-tools-title">A toolkit in motion.</h3>
+            </div>
+            <p id="tool-pool-help">
+              Drag, tap, or stir the water. With a keyboard, focus a tool and
+              use the arrow keys.
+            </p>
+          </div>
+          <div
+            id="tool-pool"
+            class="tool-pool"
+            role="group"
+            aria-label="Floating development tools"
+            aria-describedby="tool-pool-help"
+          >
+            <button
+              class="tool-orb"
+              type="button"
+              aria-label="Float JavaScript"
+            >
+              <i class="fab fa-js" aria-hidden="true"></i
+              ><span>JavaScript</span>
+            </button>
+            <button class="tool-orb" type="button" aria-label="Float React">
+              <i class="fab fa-react" aria-hidden="true"></i><span>React</span>
+            </button>
+            <button class="tool-orb" type="button" aria-label="Float Node.js">
+              <i class="fab fa-node-js" aria-hidden="true"></i
+              ><span>Node.js</span>
+            </button>
+            <button class="tool-orb" type="button" aria-label="Float Python">
+              <i class="fab fa-python" aria-hidden="true"></i
+              ><span>Python</span>
+            </button>
+            <button class="tool-orb" type="button" aria-label="Float HTML5">
+              <i class="fab fa-html5" aria-hidden="true"></i><span>HTML5</span>
+            </button>
+            <button class="tool-orb" type="button" aria-label="Float CSS3">
+              <i class="fab fa-css3-alt" aria-hidden="true"></i
+              ><span>CSS3</span>
+            </button>
+            <button
+              class="tool-orb"
+              type="button"
+              aria-label="Float PostgreSQL"
+            >
+              <i class="fas fa-database" aria-hidden="true"></i
+              ><span>PostgreSQL</span>
+            </button>
+            <button class="tool-orb" type="button" aria-label="Float MongoDB">
+              <i class="fas fa-leaf" aria-hidden="true"></i><span>MongoDB</span>
+            </button>
+            <button class="tool-orb" type="button" aria-label="Float Git">
+              <i class="fab fa-git-alt" aria-hidden="true"></i><span>Git</span>
+            </button>
+            <button class="tool-orb" type="button" aria-label="Float GitHub">
+              <i class="fab fa-github" aria-hidden="true"></i
+              ><span>GitHub</span>
+            </button>
+            <button class="tool-orb" type="button" aria-label="Float Flask">
+              <i class="fas fa-flask" aria-hidden="true"></i><span>Flask</span>
+            </button>
+            <button class="tool-orb" type="button" aria-label="Float FastAPI">
+              <i class="fas fa-bolt" aria-hidden="true"></i><span>FastAPI</span>
+            </button>
+          </div>
         </div>
       </section>
       <section class="section achievements" aria-labelledby="focus-title">
@@ -1562,6 +1642,13 @@
         </button>
       </div>
     </dialog>
-    <script src="script.js?v=emerald-2"></script>
+    <script src="script.js?v=liquid-1"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="liquid-motion.js?v=liquid-1"></script>
   </body>
 </html>

@@ -42,14 +42,17 @@ A cinematic, streaming-inspired portfolio in dark charcoal, emerald green, and m
 - Project case-study dialogs retain the original architecture flows, quality notes, screenshots, demo instructions, and external links. Native details remain available when JavaScript is disabled.
 - Accessible mobile navigation, skip link, visible keyboard focus, native modal focus containment, Escape dismissal, and focus restoration.
 - Chapter progress reflects actual viewing. Reduced-motion preferences disable animated effects.
-- The hero and About section use the supplied natural-colour photograph at its original **2268 × 4032** resolution. A responsive CSS crop focuses on the face and upper body without modifying the image. Grayscale, tint, shading, and grain overlays have been removed from the photo presentation. The older image assets, certificate, and resume are retained.
-- Portrait orbit and local lightning interactions are carried over in the emerald palette.
+- The previous headshot is restored in the hero and About section in its natural colours. The hero uses the existing optimized 800 × 800 WebP; the About section and social preview use the original PNG. No grayscale or colour tint is applied to the photographs. The certificate and resume are retained.
+- A full-viewport Canvas 2D layer adds soft, cached sun rays, underwater shadows, and transient pointer wakes. Content groups bob and sway with small sine/cosine offsets and damped springs; focused controls stay still.
+- The floating toolkit contains 12 labeled buttons with pointer capture for dragging, damped boundary rebounds, pairwise collisions, click impulses, keyboard arrows, and local cursor repulsion. Tools return to gently moving equilibrium positions.
+- GSAP 3.13.0 loads from cdnjs through a pinned script tag with an integrity hash and drives the render clock. A native animation-frame fallback keeps motion working if the CDN fails. The normal cursor remains available.
+- Pause/resume control, live reduced-motion preference handling, hidden-tab suspension, offscreen-body culling, capped pixel density and frame deltas, and bounded wake counts limit motion and rendering work. With motion paused or disabled, tools form a static grid. The content remains accessible without JavaScript.
 - Contact opens the visitor’s email app. Resume links support viewing and downloading the existing PDF.
 - No opening screen blocks access to the content.
 
 ## Run locally
 
-Open `index.html`, or serve the repository with a static server:
+Serve the repository with a static server so the JavaScript modules can load:
 
 ```sh
 python3 -m http.server 4173
@@ -61,12 +64,17 @@ Then open `http://localhost:4173/`. The folder can be opened directly in VS Code
 
 | Change                                                                  | File                                       |
 | ----------------------------------------------------------------------- | ------------------------------------------ |
-| Personal details, experience, skills, six projects and case studies    | `index.html`                               |
+| Personal details, experience, skills, six projects and case studies     | `index.html`                               |
 | Palette, typography, layouts, responsive breakpoints and motion         | `style.css`                                |
 | Navigation, intro, filters, project overlays, progress and interactions | `script.js`                                |
 | Resume                                                                  | `assets/resume/Rachit_Tripathi_Resume.pdf` |
-| Current hero and About portrait (4032 px tall)                            | `assets/images/rachit-portrait-4k.jpg`      |
-| Previous portrait assets                                                | `assets/images/profile.png`, `assets/images/portrait.webp` |
+| Hero portrait                                                           | `assets/images/portrait.webp`              |
+| About and social-preview portrait                                       | `assets/images/profile.png`                |
+| Light, motion lifecycle, dragging, and tool interaction                 | `liquid-motion.js`                         |
+| Time-based springs, boundaries, collisions, and cursor forces           | `liquid-physics.mjs`                       |
+| Physics regression tests                                                | `tests/liquid-physics.test.mjs`            |
+
+Run the physics tests with `node --test tests/liquid-physics.test.mjs`.
 
 Keep CSS and JavaScript query versions in `index.html` current when deploying asset changes.
 
@@ -80,7 +88,7 @@ The live address remains:
 
 **https://rachit1807.github.io/rachit-tripathi-portfolio/**
 
-Keep the repository’s existing Pages publishing source. Publish the root containing `index.html`, `style.css`, `script.js`, `.nojekyll`, and `assets/`. Relative asset paths work under `/rachit-tripathi-portfolio/`; no Vite base or rewrite rules are needed. No Sites, Render, or Vercel deployment is required for this portfolio.
+Keep the repository’s existing Pages publishing source. Publish the root containing `index.html`, `style.css`, `script.js`, `liquid-motion.js`, `liquid-physics.mjs`, `.nojekyll`, and `assets/`. Relative asset paths work under `/rachit-tripathi-portfolio/`; no Vite base or rewrite rules are needed. No Sites, Render, or Vercel deployment is required for this portfolio.
 
 ## Contact
 

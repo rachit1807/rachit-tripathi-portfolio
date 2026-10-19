@@ -52,3 +52,16 @@ The portfolio is buildless HTML, CSS, and JavaScript. Keep the existing GitHub P
 - Visually reviewed the hero at 1440 px, 777 px, and 320 px, plus the About portrait at 777 px. No document width overflow at 1440 px or 320 px.
 - The portrait interaction retains its closer crop during animation. The reduced-motion rule retains the same crop without animation.
 - JavaScript syntax, static link/asset checks, and Git whitespace checks passed. All six Originals and the CodeMore 26-project total remain present.
+
+## Restored headshot and underwater motion — 19 October 2026
+
+- Restored the previous 800 × 800 hero WebP and original About/social-preview PNG, using their natural colours. Removed the superseded 4K JPEG from the published source.
+- Added modular Canvas 2D lighting and wakes, grouped content buoyancy, and a 12-tool pool. GSAP 3.13.0 uses a pinned cdnjs URL and SHA-384 integrity hash; a native frame clock handles CDN unavailability.
+- Seven Node tests passed: damped wall rebounds, pair collision separation and impulse, dragged-body collision handling, coincident-centre resolution, near/far wake forces, spring return at 30/60/120 Hz, and 600 frames of disturbed packed-body simulation without non-finite coordinates or escaped boundaries.
+- Browser verified tool click, actual pointer drag into another icon, visible pointer wake, keyboard arrow nudge, pause to static grid, and resume to floating layout.
+- A preview with the GSAP script omitted still activated the canvas and floating toolkit. A separate preview with all scripts omitted retained the 12 tools in a static grid and hid the pause control.
+- At widths 320, 768, and 1440 px: no document width overflow; all tool bounds remained inside their container; canvas CSS dimensions matched the viewport. The primary preview also used a 777 × 764 viewport.
+- Existing project filters show three full-stack projects and six total. RailYatra opens its case-study dialog; Escape closes it and restores focus. All 20 original external/resume links, local assets, internal anchors, and ARIA references pass static checks, with 41 unique IDs.
+- JavaScript/module syntax and Git whitespace checks passed. Reduced-motion preference changes, hidden-tab suspension, touch pointer handling, and frame-delta limits were reviewed in source; OS reduced-motion and physical touch-device behaviour were not emulated.
+
+The background is a lightweight visual simulation of underwater lighting and displacement, not a computational fluid solver. Content motion is deliberately small to preserve readability.

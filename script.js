@@ -240,24 +240,6 @@ portrait.addEventListener("click", () => {
 portrait.addEventListener("animationend", () =>
   portrait.classList.remove("is-orbiting"),
 );
-// Keep the earlier portfolio's local lightning interaction, in the new palette.
-document.addEventListener("click", (event) => {
-  if (reducedMotion.matches || event.target.closest("a,button,summary,dialog"))
-    return;
-  const card = event.target.closest(
-    ".project-card,.skill-card,.certificate-card,.education-card,.achievement-card",
-  );
-  if (!card) return;
-  card.querySelector(".lightning-strike")?.remove();
-  const bounds = card.getBoundingClientRect();
-  const flash = document.createElement("span");
-  flash.className = "lightning-strike";
-  flash.setAttribute("aria-hidden", "true");
-  flash.style.setProperty("--strike-x", `${event.clientX - bounds.left}px`);
-  flash.style.setProperty("--strike-y", `${event.clientY - bounds.top}px`);
-  card.append(flash);
-  flash.addEventListener("animationend", () => flash.remove(), { once: true });
-});
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
     (entries) => {
