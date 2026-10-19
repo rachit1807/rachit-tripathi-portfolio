@@ -1,846 +1,1380 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Rachit Tripathi | Software Engineering Portfolio</title>
-
-    <meta name="description"
-        content="Portfolio of Rachit Tripathi - Aspiring Software Engineer, Full Stack Developer and AI Enthusiast.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-    <meta name="theme-color" content="#07111f">
-
-    <link rel="stylesheet" href="style.css?v=portfolio-v11">
-
-</head>
-
-<body>
-
+    <meta
+      name="description"
+      content="Rachit Tripathi — IT undergraduate, full-stack developer and AI enthusiast. Explore five featured projects, internship experience and the story behind the code."
+    />
+    <meta name="theme-color" content="#080d0b" />
+    <link
+      rel="canonical"
+      href="https://rachit1807.github.io/rachit-tripathi-portfolio/"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Rachit Tripathi — The Engineering Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Five projects. One evolving story. Full-stack development, practical AI, and the craft of building useful software."
+    />
+    <meta
+      property="og:url"
+      content="https://rachit1807.github.io/rachit-tripathi-portfolio/"
+    />
+    <meta
+      property="og:image"
+      content="https://rachit1807.github.io/rachit-tripathi-portfolio/assets/images/profile.png"
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css?v=emerald-1" />
+  </head>
+  <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <!-- Scroll Progress -->
-
+    <div class="grain" aria-hidden="true"></div>
     <div id="progress-bar" aria-hidden="true"></div>
-
-    <!-- ================= NAVBAR ================= -->
-
     <header class="site-header">
-
-        <nav class="navbar" aria-label="Primary navigation">
-
-            <a href="#home" class="brand" aria-label="Rachit Tripathi home">
-                <span class="logo-box" aria-hidden="true">RT</span>
-                <span class="brand-copy"><strong>Rachit Tripathi</strong><small>Engineering portfolio</small></span>
-            </a>
-
-            <ul class="nav-links" id="primary-navigation" aria-label="Primary navigation">
-
-                <li><a href="#home">Home</a></li>
-
-                <li><a href="#about">About</a></li>
-
-                <li><a href="#skills">Skills</a></li>
-
-                <li><a href="#experience">Experience</a></li>
-
-                <li><a href="#projects">Projects</a></li>
-
-                <li><a href="#certificates">Training</a></li>
-
-                <li><a href="#education">Education</a></li>
-
-                <li><a href="#contact">Contact</a></li>
-
-            </ul>
-
-            <a class="nav-cta" href="#contact">Let’s talk <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-
-            <button class="menu-btn" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
-                <i class="fas fa-bars" aria-hidden="true"></i>
-            </button>
-
-        </nav>
-
+      <nav class="navbar" aria-label="Primary navigation">
+        <a class="brand" href="#home" aria-label="Rachit Tripathi home"
+          ><span class="logo-box">RT<span>.</span></span
+          ><span class="brand-copy">THE ENGINEERING<br />PORTFOLIO</span></a
+        >
+        <ul class="nav-links" id="primary-navigation">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Originals</a></li>
+          <li><a href="#about">The story</a></li>
+          <li><a href="#experience">Journey</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a
+          class="nav-cta"
+          href="assets/resume/Rachit_Tripathi_Resume.pdf"
+          target="_blank"
+          rel="noopener"
+          >Resume <span aria-hidden="true">↗</span></a
+        >
+        <button
+          class="menu-btn"
+          type="button"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+          aria-label="Open navigation menu"
+        >
+          <span aria-hidden="true">☰</span>
+        </button>
+      </nav>
     </header>
-
     <main id="main-content">
-
-    <!-- ================= HERO ================= -->
-
-    <section class="hero" id="home">
-
-        <div class="hero-atmosphere" aria-hidden="true"><span></span><span></span><span></span></div>
-
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-orbit" aria-hidden="true"></div>
         <div class="hero-content">
-
-            <div class="hero-left">
-
-                <p class="hero-eyebrow"><span class="status-dot" aria-hidden="true"></span> SOFTWARE ENGINEERING · FULL-STACK · AI/ML</p>
-
-                <h3>Hello, I'm <span class="wave-hand" aria-hidden="true">👋</span></h3>
-
-                <h1>
-
-                    Rachit
-
-                    <span>Tripathi</span>
-
-                </h1>
-
-                <h2>
-
-                    Aspiring Software Engineer
-
-                </h2>
-
-                <p class="hero-availability"><span class="availability-dot" aria-hidden="true"></span> Open to internships and early-career opportunities</p>
-
-                <p class="hero-text">
-
-                    IT undergraduate passionate about Full Stack Development,
-                    Machine Learning and Artificial Intelligence.
-
-                    I enjoy building scalable applications,
-                    responsive web experiences,
-                    and practical software solutions that solve real-world problems.
-
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#projects" class="btn">
-
-                        View Projects
-
-                    </a>
-
-                    <a href="assets/resume/Rachit_Tripathi_Resume.pdf" download class="btn-outline">
-
-                        <i class="fas fa-download"></i>
-
-                        Download Resume
-
-                    </a>
-
-                </div>
-
-                <div class="hero-social">
-
-                    <a href="https://github.com/rachit1807" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile in a new tab">
-
-                        <i class="fab fa-github"></i>
-
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/rachittripathi2509/" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile in a new tab">
-
-                        <i class="fab fa-linkedin"></i>
-
-                    </a>
-
-                    <a href="mailto:tripathirachit486@gmail.com" aria-label="Email Rachit">
-
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
-
-                    </a>
-
-                </div>
-
+          <div class="hero-left">
+            <p class="series-mark">
+              <span>RT</span> ORIGINAL <i></i> A DEVELOPER’S STORY
+            </p>
+            <h1 id="hero-title">
+              <span class="shimmer-text">RACHIT</span><br />TRIPATHI<span
+                class="title-period"
+                >.</span
+              >
+            </h1>
+            <p class="hero-subtitle">CODE. CRAFT. CURIOSITY.</p>
+            <div class="hero-meta">
+              <span class="meta-label">FULL STACK</span><span>AI &amp; ML</span
+              ><span>B.Tech IT · 2027</span><span>5 Originals</span>
             </div>
-
-            <div class="hero-right">
-
-                <button class="profile-card" type="button" aria-label="Move Rachit Tripathi’s portrait around a full 360-degree circle" title="Click for a 360° portrait orbit">
-
-                    <img src="assets/images/profile.png" alt="">
-
-                    <span class="profile-chip profile-chip-one"><i class="fas fa-code" aria-hidden="true"></i> Full-stack</span>
-                    <span class="profile-chip profile-chip-two"><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i> AI &amp; ML</span>
-                    <span class="profile-spin-cue" aria-hidden="true"><i class="fas fa-rotate"></i><small>360°</small></span>
-
-                </button>
-
+            <p class="hero-text">
+              Aspiring software engineer. IT undergraduate. I turn curiosity
+              into responsive interfaces, reliable APIs, and practical AI
+              projects.
+            </p>
+            <div class="hero-buttons">
+              <button class="btn" id="play-intro" type="button">
+                <span aria-hidden="true">▶</span> Play my intro</button
+              ><a class="btn-outline" href="#projects"
+                ><span aria-hidden="true">＋</span> Explore my work</a
+              >
             </div>
-
+            <p class="hero-availability">
+              <span class="status-dot"></span> Open to internships &amp;
+              early-career opportunities
+            </p>
+            <div class="hero-social">
+              <a
+                href="https://github.com/rachit1807"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub ↗</a
+              ><a
+                href="https://www.linkedin.com/in/rachittripathi2509/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn ↗</a
+              ><a href="mailto:tripathirachit486@gmail.com">Email ↗</a>
+            </div>
+          </div>
+          <div class="hero-right">
+            <span class="portrait-edition"
+              >EST. IN CURIOSITY / BUILT THROUGH PRACTICE</span
+            ><button
+              class="profile-card"
+              type="button"
+              aria-label="Animate Rachit’s portrait around a 360-degree orbit"
+              title="Click for a portrait orbit"
+            >
+              <img
+                src="assets/images/portrait.webp"
+                width="800"
+                height="800"
+                alt="Rachit Tripathi"
+                fetchpriority="high"
+              />
+              <span class="portrait-shade" aria-hidden="true"></span
+              ><span class="portrait-corner" aria-hidden="true">↗</span
+              ><span class="portrait-caption"
+                ><small>THE PERSON BEHIND THE CODE</small
+                ><strong>Ideas into<br />working software.</strong></span
+              ><span class="portrait-coordinates"
+                >LUCKNOW, INDIA &nbsp; / &nbsp; 2026</span
+              >
+            </button>
+            <div class="portrait-stamp">
+              <span>ENGINEER IN THE MAKING</span><b>Always<br />building.</b
+              ><span class="stamp-star" aria-hidden="true">✳</span>
+            </div>
+          </div>
         </div>
-
-    </section>
-
-    <div class="signal-strip" aria-label="Areas of interest">
-        <div class="signal-track" aria-hidden="true">
-            <span>Building useful software</span><i>✳</i><span>Thoughtful interfaces</span><i>✳</i><span>Reliable APIs</span><i>✳</i><span>Applied AI &amp; ML</span><i>✳</i>
-            <span>Building useful software</span><i>✳</i><span>Thoughtful interfaces</span><i>✳</i><span>Reliable APIs</span><i>✳</i><span>Applied AI &amp; ML</span><i>✳</i>
+        <div class="hero-footer">
+          <span>SCROLL TO EXPLORE <b aria-hidden="true">↓</b></span
+          ><span>VOL. 01 <i></i> THE STORY SO FAR</span>
         </div>
-    </div>
-    <!-- ================= ABOUT ================= -->
+      </section>
+      <nav class="chapter-nav" aria-label="Explore portfolio chapters">
+        <p>CHOOSE YOUR<br /><strong>next chapter.</strong></p>
+        <a href="#projects"
+          ><span>01 / ORIGINALS</span><b>The work <i>↗</i></b
+          ><span class="chapter-progress" data-section="projects"></span></a
+        ><a href="#experience"
+          ><span>02 / JOURNEY</span><b>The experience <i>↗</i></b
+          ><span class="chapter-progress" data-section="experience"></span></a
+        ><a href="#skills"
+          ><span>03 / TOOLKIT</span><b>The skills <i>↗</i></b
+          ><span class="chapter-progress" data-section="skills"></span></a
+        ><a href="#resume"
+          ><span>04 / FULL STORY</span><b>The resume <i>↗</i></b
+          ><span class="chapter-progress" data-section="resume"></span
+        ></a>
+      </nav>
+      <section
+        class="section projects"
+        id="projects"
+        aria-labelledby="projects-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 / SELECTED WORK · FIVE FEATURED PROJECTS</p>
+            <h2 id="projects-title">THE ORIGINALS<span>.</span></h2>
+            <p>
+              Different problems. Shared curiosity. Open a title for the story
+              behind the build.
+            </p>
+          </div>
+          <div class="rail-controls">
+            <button
+              type="button"
+              id="rail-prev"
+              aria-label="Previous projects"
+              aria-controls="project-rail"
+            >
+              ←</button
+            ><button
+              type="button"
+              id="rail-next"
+              aria-label="Next projects"
+              aria-controls="project-rail"
+            >
+              →
+            </button>
+          </div>
+        </div>
+        <div
+          class="filter-row"
+          role="group"
+          aria-label="Filter featured projects"
+        >
+          <button type="button" data-filter="all" aria-pressed="true">
+            All originals <span>05</span></button
+          ><button type="button" data-filter="fullstack" aria-pressed="false">
+            Full-stack platforms</button
+          ><button type="button" data-filter="ai" aria-pressed="false">
+            AI &amp; machine learning
+          </button>
+          <p id="filter-status" role="status" aria-live="polite">
+            Showing all 5 projects
+          </p>
+        </div>
+        <div
+          class="projects-container rail"
+          id="project-rail"
+          role="region"
+          aria-label="Featured projects; scroll horizontally to explore"
+          tabindex="0"
+        >
+          <article
+            class="project-card"
+            data-genre="fullstack"
+            id="project-taskflow"
+          >
+            <div class="project-poster poster-1">
+              <div class="poster-meta">
+                <span>RT <b>ORIGINAL</b></span
+                ><span>01 / 05</span>
+              </div>
+              <img
+                src="assets/images/projects/taskflow-dashboard.jpg"
+                alt="TaskFlow Pro sample workspace dashboard"
+                loading="lazy"
+                width="1200"
+                height="675"
+              /><span class="poster-caption"
+                >WORKSPACES / BOARDS / COLLABORATION</span
+              ><span class="poster-title">TaskFlow Pro</span>
+            </div>
+            <p class="project-kicker">
+              Flagship · Full-stack project management
+            </p>
+            <h3>TaskFlow Pro</h3>
+            <p>
+              A workspace-based project management app for organizing teams,
+              projects, and Kanban tasks.
+            </p>
 
-    <section class="section about" id="about">
+            <div class="project-tech">
+              <span>React</span><span>Node.js</span><span>Express</span
+              ><span>MongoDB</span>
+            </div>
+            <details class="case-study">
+              <summary>
+                Explore case study <span aria-hidden="true">↗</span>
+              </summary>
+              <div class="case-study-content">
+                <div
+                  class="project-gallery"
+                  aria-label="TaskFlow Pro project screenshots"
+                >
+                  <figure class="project-media">
+                    <img
+                      src="assets/images/projects/taskflow-dashboard.jpg"
+                      alt="TaskFlow Pro demo workspace dashboard showing summary cards, a task list, and team activity"
+                      loading="lazy"
+                    />
+                    <figcaption>
+                      Repository screenshot; dashboard values are sample data.
+                    </figcaption>
+                  </figure>
+                  <figure class="project-media">
+                    <img
+                      src="assets/images/projects/taskflow-board.jpg"
+                      alt="TaskFlow Pro demo Kanban board with Backlog, In Progress, In Review, and Done columns"
+                      loading="lazy"
+                    />
+                    <figcaption>
+                      Kanban view from the project README.
+                    </figcaption>
+                  </figure>
+                </div>
+                <div>
+                  <h4>Problem and approach</h4>
+                  <p>
+                    Teams need a shared place to plan work while keeping
+                    workspace membership and project activity scoped. TaskFlow
+                    combines workspace roles with project boards, task
+                    assignment, comments, attachments, notifications, and
+                    activity history.
+                  </p>
+                </div>
+                <div>
+                  <h4>Architecture</h4>
+                  <ol
+                    class="architecture-flow"
+                    aria-label="TaskFlow Pro architecture"
+                  >
+                    <li>
+                      <strong>React + Vite</strong
+                      ><span>Workspace and board UI</span>
+                    </li>
+                    <li>
+                      <strong>Express API</strong
+                      ><span>Auth, roles, project and task requests</span>
+                    </li>
+                    <li>
+                      <strong>MongoDB</strong
+                      ><span>Workspace and project data</span>
+                    </li>
+                  </ol>
+                </div>
+                <div>
+                  <h4>Quality and demo</h4>
+                  <ul>
+                    <li>
+                      The repository README documents local setup, environment
+                      variables, architecture, and the API health route. Its
+                      root package manifest does not list an automated test
+                      command.
+                    </li>
+                    <li>
+                      Open the public demo to browse the sample workspace. Sign
+                      in to save changes.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+            <div class="project-links">
+              <a
+                href="https://taskflow-pro-web.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open TaskFlow Pro live demo in a new tab"
+                >Live demo</a
+              >
+              <a
+                href="https://github.com/rachit1807/TaskFlow-Pro"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open TaskFlow Pro source and documentation in a new tab"
+                >Source &amp; docs</a
+              >
+            </div>
+          </article>
+          <article
+            class="project-card"
+            data-genre="ai"
+            id="project-ai-code-review"
+          >
+            <div class="project-poster poster-2">
+              <div class="poster-meta">
+                <span>RT <b>ORIGINAL</b></span
+                ><span>02 / 05</span>
+              </div>
+              <div class="code-art" aria-hidden="true">
+                <span class="code-label">review.js</span
+                ><code
+                  ><em>const</em> review = <em>await</em><br />
+                  analyze(code);<br /><br /><span>// A second perspective.</span
+                  ><br /><span>// A better next iteration.</span></code
+                ><span class="code-result"
+                  >✦ &nbsp; Structured AI feedback</span
+                >
+              </div>
+              <span class="poster-title">AI Code Review</span>
+            </div>
+            <p class="project-kicker">
+              CodeMore internship capstone · AI-assisted review
+            </p>
+            <h3>AI Code Review</h3>
+            <p>
+              A full-stack code review tool that sends submitted code to an
+              Ollama model and presents structured feedback.
+            </p>
+            <div class="project-tech">
+              <span>React</span><span>Node.js</span><span>Express</span
+              ><span>MongoDB</span><span>Ollama</span>
+            </div>
+            <details class="case-study">
+              <summary>
+                Explore case study <span aria-hidden="true">↗</span>
+              </summary>
+              <div class="case-study-content">
+                <div>
+                  <h4>Problem and approach</h4>
+                  <p>
+                    The capstone explores how a developer can get a consistent
+                    first-pass review format. The review prompt asks the model
+                    for strengths, severity-labelled issues, suggestions, and an
+                    improved-code section; generated feedback still needs human
+                    review.
+                  </p>
+                </div>
+                <div>
+                  <h4>Architecture</h4>
+                  <ol
+                    class="architecture-flow"
+                    aria-label="AI Code Review architecture"
+                  >
+                    <li>
+                      <strong>React client</strong
+                      ><span>Code input and review results</span>
+                    </li>
+                    <li>
+                      <strong>Express API</strong
+                      ><span>Auth and review request handling</span>
+                    </li>
+                    <li>
+                      <strong>Ollama</strong
+                      ><span>Configured local or remote model endpoint</span>
+                    </li>
+                    <li>
+                      <strong>MongoDB</strong
+                      ><span>User and review records</span>
+                    </li>
+                  </ol>
+                </div>
+                <div>
+                  <h4>Quality and demo</h4>
+                  <ul>
+                    <li>
+                      The README has an API endpoint reference and manual
+                      Postman verification steps. The backend
+                      <code>npm test</code> script is a placeholder, so no
+                      automated test suite is claimed.
+                    </li>
+                    <li>
+                      Try a short, non-confidential code sample. Review
+                      generation depends on the Ollama endpoint configured for
+                      the service.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+            <div class="project-links">
+              <a
+                href="https://ai-code-review-n5gt.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open AI Code Review live demo in a new tab"
+                >Live demo</a
+              >
+              <a
+                href="https://github.com/rachit1807/AI-Code-Review"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open AI Code Review source and API documentation in a new tab"
+                >Source &amp; API docs</a
+              >
+            </div>
+          </article>
+          <article
+            class="project-card"
+            data-genre="fullstack"
+            id="project-teamhub"
+          >
+            <div class="project-poster poster-3">
+              <div class="poster-meta">
+                <span>RT <b>ORIGINAL</b></span
+                ><span>03 / 05</span>
+              </div>
+              <img
+                src="assets/images/projects/teamhub-dashboard.jpg"
+                alt="TeamHub workspace dashboard"
+                loading="lazy"
+                width="1200"
+                height="675"
+              /><span class="poster-caption">IDENTITY / ROLES / ACCESS</span
+              ><span class="poster-title">TeamHub RBAC</span>
+            </div>
+            <p class="project-kicker">Full-stack · Workspace access control</p>
+            <h3>TeamHub RBAC</h3>
+            <p>
+              A team workspace app with JWT sign-in, role-based access, project
+              boards, task workflows, comments, and dashboards.
+            </p>
 
+            <div class="project-tech">
+              <span>Node.js</span><span>Express</span><span>Sequelize</span
+              ><span>PostgreSQL</span><span>JWT</span>
+            </div>
+            <details class="case-study">
+              <summary>
+                Explore case study <span aria-hidden="true">↗</span>
+              </summary>
+              <div class="case-study-content">
+                <figure class="project-media">
+                  <img
+                    src="assets/images/projects/teamhub-dashboard.jpg"
+                    alt="TeamHub workspace dashboard with workspace, project, and task panels"
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    Workspace dashboard screenshot from the project repository.
+                  </figcaption>
+                </figure>
+                <div>
+                  <h4>Problem and approach</h4>
+                  <p>
+                    Workspace, project, and task routes need to respect
+                    membership and role boundaries. TeamHub applies
+                    authentication and role checks around workspace operations,
+                    with separate models for workspaces, members, projects,
+                    tasks, and comments.
+                  </p>
+                </div>
+                <div>
+                  <h4>Architecture</h4>
+                  <ol
+                    class="architecture-flow"
+                    aria-label="TeamHub RBAC architecture"
+                  >
+                    <li>
+                      <strong>Browser UI</strong
+                      ><span>Workspace and task views</span>
+                    </li>
+                    <li>
+                      <strong>Express API</strong
+                      ><span>JWT authentication and access checks</span>
+                    </li>
+                    <li>
+                      <strong>Sequelize</strong
+                      ><span>Models and database access</span>
+                    </li>
+                    <li>
+                      <strong>PostgreSQL</strong
+                      ><span>Live demo; SQLite for local runs</span>
+                    </li>
+                  </ol>
+                </div>
+                <div>
+                  <h4>Quality and demo</h4>
+                  <ul>
+                    <li>
+                      GitHub Actions runs <code>npm run check</code> on pushes
+                      and pull requests; that script checks JavaScript syntax.
+                      The README documents API routes, and the Postman
+                      collection covers auth, validation, authorization, and
+                      task flows.
+                    </li>
+                    <li>
+                      The free web service may take 50 seconds or more to wake
+                      after inactivity. Render inspection on
+                      <time datetime="2026-10-11">October 11, 2026</time> found
+                      the PostgreSQL database available and scheduled to expire
+                      on <strong>November 9, 2026</strong>.
+                    </li>
+                    <li>
+                      Use a disposable demo account and sample data. Renew or
+                      replace the database before its expiry if the demo must
+                      retain its data.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+            <div class="project-links">
+              <a
+                href="https://teamhub-rbac.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open TeamHub RBAC live demo in a new tab"
+                >Live demo</a
+              >
+              <a
+                href="https://teamhub-rbac.onrender.com/api/health"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open TeamHub RBAC API health endpoint in a new tab"
+                >API health</a
+              >
+              <a
+                href="https://github.com/rachit1807/TeamHub-RBAC"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open TeamHub RBAC source, API docs, and Postman collection in a new tab"
+                >Source &amp; API docs</a
+              >
+            </div>
+          </article>
+          <article
+            class="project-card"
+            data-genre="ai"
+            id="project-resume-analyzer"
+          >
+            <div class="project-poster poster-4">
+              <div class="poster-meta">
+                <span>RT <b>ORIGINAL</b></span
+                ><span>04 / 05</span>
+              </div>
+              <div class="match-art" aria-hidden="true">
+                <span>RESUME</span>
+                <div class="document-lines"><i></i><i></i><i></i><i></i></div>
+                <b>↔</b><span>OPPORTUNITY</span>
+                <div class="match-label">TF-IDF · NLP · MATCHING</div>
+              </div>
+              <span class="poster-title">AI Resume Analyzer</span>
+            </div>
+            <p class="project-kicker">Career tools · NLP and matching</p>
+            <h3>AI Resume Analyzer</h3>
+            <p>
+              A Flask career platform for resume analysis, job matching, skill
+              gaps, candidate tools, and recruiter workflows.
+            </p>
+            <div class="project-tech">
+              <span>Python</span><span>Flask</span><span>TF-IDF</span
+              ><span>scikit-learn</span><span>PostgreSQL</span>
+            </div>
+            <details class="case-study">
+              <summary>
+                Explore case study <span aria-hidden="true">↗</span>
+              </summary>
+              <div class="case-study-content">
+                <div>
+                  <h4>Problem and approach</h4>
+                  <p>
+                    Applicants need an understandable view of resume coverage
+                    against a role. The analyzer extracts text from text-based
+                    PDFs, calculates an ATS-style completeness score, compares
+                    resume and job text with TF-IDF and cosine similarity, and
+                    reports skills from a defined catalogue. These are estimates
+                    and heuristics, not hiring recommendations.
+                  </p>
+                </div>
+                <div>
+                  <h4>Architecture</h4>
+                  <ol
+                    class="architecture-flow"
+                    aria-label="AI Resume Analyzer architecture"
+                  >
+                    <li>
+                      <strong>Flask views</strong
+                      ><span>Anonymous analysis and account tools</span>
+                    </li>
+                    <li>
+                      <strong>Parser + services</strong
+                      ><span>PDF text, scoring, matching, guidance</span>
+                    </li>
+                    <li>
+                      <strong>SQLAlchemy</strong
+                      ><span>Candidate, recruiter, and report records</span>
+                    </li>
+                    <li>
+                      <strong>SQLite / PostgreSQL</strong
+                      ><span>Local fallback / durable deployment</span>
+                    </li>
+                  </ol>
+                </div>
+                <div>
+                  <h4>Quality and demo</h4>
+                  <ul>
+                    <li>
+                      Automated route and service tests are included under
+                      <code>tests/</code> and run with <code>pytest</code>. The
+                      README says tests use isolated SQLite databases and do not
+                      send email or call external AI services.
+                    </li>
+                    <li>
+                      Try the anonymous analyzer with a text-based sample or
+                      redacted PDF and a target job description. Account history
+                      and recruiter workflows require durable PostgreSQL; the
+                      app's resume tools use local rules and templates rather
+                      than a hosted language model.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+            <div class="project-links">
+              <a
+                href="https://ai-resume-analyzer-rachit.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open AI Resume Analyzer live demo in a new tab"
+                >Live demo</a
+              >
+              <a
+                href="https://ai-resume-analyzer-rachit.onrender.com/health"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open AI Resume Analyzer health endpoint in a new tab"
+                >Health</a
+              >
+              <a
+                href="https://github.com/rachit1807/AI_RESUME_ANALYZER"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open AI Resume Analyzer source, tests, and documentation in a new tab"
+                >Source &amp; tests</a
+              >
+            </div>
+          </article>
+          <article class="project-card" data-genre="ai" id="project-smartloan">
+            <div class="project-poster poster-5">
+              <div class="poster-meta">
+                <span>RT <b>ORIGINAL</b></span
+                ><span>05 / 05</span>
+              </div>
+              <div class="loan-art" aria-hidden="true">
+                <span class="orbital-ring"></span
+                ><span class="loan-symbol">₹</span
+                ><span class="loan-label">DATA → ESTIMATE → REVIEW</span>
+              </div>
+              <span class="poster-title">SmartLoanAI</span>
+            </div>
+            <p class="project-kicker">Educational demo · Machine learning</p>
+            <h3>SmartLoanAI</h3>
+            <p>
+              A loan workflow demo combining applicant and admin screens,
+              FastAPI endpoints, an ML estimate, and document review.
+            </p>
+            <div class="project-tech">
+              <span>React</span><span>FastAPI</span><span>Python</span
+              ><span>scikit-learn</span><span>PostgreSQL</span>
+            </div>
+            <details class="case-study">
+              <summary>
+                Explore case study <span aria-hidden="true">↗</span>
+              </summary>
+              <div class="case-study-content">
+                <div>
+                  <h4>Problem and approach</h4>
+                  <p>
+                    The project models an application review flow with an
+                    eligibility estimate, repayment calculations, and document
+                    checks. Its code keeps document verification status separate
+                    from the loan decision, so reviewing a file does not
+                    silently approve or reject an application.
+                  </p>
+                </div>
+                <div>
+                  <h4>Architecture</h4>
+                  <ol
+                    class="architecture-flow"
+                    aria-label="SmartLoanAI architecture"
+                  >
+                    <li>
+                      <strong>React app</strong
+                      ><span>Applicant and admin screens</span>
+                    </li>
+                    <li>
+                      <strong>FastAPI</strong
+                      ><span>Auth, loan, document, and admin routes</span>
+                    </li>
+                    <li>
+                      <strong>ML + calculations</strong
+                      ><span>Eligibility estimate and repayment figures</span>
+                    </li>
+                    <li>
+                      <strong>SQL database</strong
+                      ><span>Neon PostgreSQL live; SQLite local</span>
+                    </li>
+                  </ol>
+                </div>
+                <div>
+                  <h4>Quality and demo</h4>
+                  <ul>
+                    <li>
+                      <code>backend/test_decision_isolation.py</code> is an
+                      included regression script using an in-memory SQLite
+                      database. FastAPI exposes interactive API docs at
+                      <code>/docs</code>.
+                    </li>
+                    <li>
+                      This is an educational demonstration, not a lending
+                      decision service. Use sample financial details and
+                      documents only. The README notes that uploaded file
+                      contents use Render's local filesystem and may not survive
+                      a restart or redeploy.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+            <div class="project-links">
+              <a
+                href="https://smart-loan-ai-one.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open SmartLoanAI live demo in a new tab"
+                >Live demo</a
+              >
+              <a
+                href="https://smartloanai-api.onrender.com/docs"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open SmartLoanAI interactive API docs in a new tab"
+                >API docs</a
+              >
+              <a
+                href="https://github.com/rachit1807/SmartLoanAI"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open SmartLoanAI source and documentation in a new tab"
+                >Source</a
+              >
+            </div>
+          </article>
+        </div>
+        <p class="additional-projects">
+          Swipe or use the arrows to browse.
+          <a
+            href="https://github.com/rachit1807"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Explore more on GitHub ↗</a
+          >
+        </p>
+      </section>
+      <section class="section about" id="about">
         <div class="section-title">
+          <p class="eyebrow">01 / THE PILOT</p>
+          <h2>The person behind<br />the projects.</h2>
 
-            <h2>About Me</h2>
-
-            <p>Get to know me better</p>
-
+          <p>Curiosity, made practical.</p>
         </div>
 
         <div class="about-container">
+          <div class="about-image">
+            <img src="assets/images/profile.png" alt="Rachit Tripathi" />
+          </div>
 
-            <div class="about-image">
+          <div class="about-content">
+            <h3>Aspiring Software Engineer</h3>
 
-                <img src="assets/images/profile.png" alt="Rachit Tripathi">
+            <p>
+              I'm a B.Tech Information Technology undergraduate at Babu Banarasi
+              Das Northern India Institute of Technology, Lucknow. I enjoy
+              developing modern web applications, building backend APIs, and
+              exploring Artificial Intelligence and Machine Learning.
+            </p>
 
+            <p>
+              My experience includes front-end work at Codveda Technologies and
+              an ongoing full-stack internship at CodeMore. I build responsive
+              web experiences, backend APIs, and practical machine-learning and
+              NLP projects.
+            </p>
+
+            <div class="about-info">
+              <div class="info-box">
+                <h4>Name</h4>
+
+                <p>Rachit Tripathi</p>
+              </div>
+
+              <div class="info-box">
+                <h4>Email</h4>
+
+                <p>tripathirachit486@gmail.com</p>
+              </div>
+
+              <div class="info-box">
+                <h4>Location</h4>
+
+                <p>Lucknow, Uttar Pradesh</p>
+              </div>
+
+              <div class="info-box">
+                <h4>Education</h4>
+
+                <p>B.Tech Information Technology</p>
+              </div>
             </div>
-
-            <div class="about-content">
-
-                <h3>Aspiring Software Engineer</h3>
-
-                <p>
-
-                    I'm a B.Tech Information Technology undergraduate at
-                    Babu Banarasi Das Northern India Institute of Technology,
-                    Lucknow.
-
-                    I enjoy developing modern web applications,
-                    building backend APIs,
-                    and exploring Artificial Intelligence and Machine Learning.
-
-                </p>
-
-                <p>
-
-                    My experience includes front-end work at Codveda Technologies and an ongoing full-stack internship at CodeMore. I build responsive web experiences, backend APIs, and practical machine-learning and NLP projects.
-
-                </p>
-
-                <div class="about-info">
-
-                    <div class="info-box">
-
-                        <h4>Name</h4>
-
-                        <p>Rachit Tripathi</p>
-
-                    </div>
-
-                    <div class="info-box">
-
-                        <h4>Email</h4>
-
-                        <p>tripathirachit486@gmail.com</p>
-
-                    </div>
-
-                    <div class="info-box">
-
-                        <h4>Location</h4>
-
-                        <p>Lucknow, Uttar Pradesh</p>
-
-                    </div>
-
-                    <div class="info-box">
-
-                        <h4>Education</h4>
-
-                        <p>B.Tech Information Technology</p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+          </div>
         </div>
-
-    </section>
-
-    <!-- ================= SKILLS ================= -->
-    <section class="section skills" id="skills">
+      </section>
+      <section class="section experience" id="experience">
         <div class="section-title">
-            <h2>Technical Skills</h2>
-            <p>Skills shown by category, based on my project work</p>
-        </div>
-        <div class="skills-container">
-            <article class="skill-card">
-                <i class="fas fa-code" aria-hidden="true"></i>
-                <h3>Languages</h3>
-                <ul class="skill-list"><li>Java</li><li>Python</li><li>JavaScript</li><li>SQL</li></ul>
-            </article>
-            <article class="skill-card">
-                <i class="fas fa-laptop-code" aria-hidden="true"></i>
-                <h3>Frontend</h3>
-                <ul class="skill-list"><li>HTML5</li><li>CSS3</li><li>React</li><li>Responsive UI</li></ul>
-            </article>
-            <article class="skill-card">
-                <i class="fas fa-server" aria-hidden="true"></i>
-                <h3>Backend &amp; APIs</h3>
-                <ul class="skill-list"><li>Node.js</li><li>Express</li><li>Flask</li><li>FastAPI</li><li>REST</li><li>Authentication &amp; authorization</li></ul>
-            </article>
-            <article class="skill-card">
-                <i class="fas fa-database" aria-hidden="true"></i>
-                <h3>Data</h3>
-                <ul class="skill-list"><li>MongoDB</li><li>PostgreSQL</li><li>SQLite</li><li>SQLAlchemy</li></ul>
-            </article>
-            <article class="skill-card">
-                <i class="fas fa-brain" aria-hidden="true"></i>
-                <h3>AI &amp; Machine Learning</h3>
-                <ul class="skill-list"><li>scikit-learn</li><li>TF-IDF</li><li>NLP basics</li><li>Model training</li><li>Feature engineering</li></ul>
-            </article>
-            <article class="skill-card">
-                <i class="fas fa-screwdriver-wrench" aria-hidden="true"></i>
-                <h3>Tools &amp; Practices</h3>
-                <ul class="skill-list"><li>Git &amp; GitHub</li><li>Postman</li><li>pytest</li><li>GitHub Actions</li><li>Render</li><li>Vercel</li><li>GitHub Pages</li></ul>
-            </article>
-        </div>
-    </section>
-
-    <!-- ================= EXPERIENCE ================= -->
-    <section class="section experience" id="experience">
-        <div class="section-title">
-            <h2>Experience</h2>
-            <p>Internship work and shipped contributions</p>
+          <p class="eyebrow">03 / MY JOURNEY</p>
+          <h2>Learning by building.</h2>
+          <p>Internship work and shipped contributions</p>
         </div>
         <div class="timeline">
-            <article class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Full-Stack Web Development Intern</h3>
-                    <h4>CodeMore</h4>
-                    <p class="experience-meta"><time datetime="2026-09-29">29 September 2026</time> – Present · Remote</p>
-                    <p>Working remotely on assigned full-stack development tasks and projects. The internship capstone is <a href="#project-ai-code-review">AI Code Review</a>, with a React frontend, backend APIs, authentication and authorization, and database integration.</p>
-                </div>
-            </article>
-            <article class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Front-End Development Intern</h3>
-                    <h4>Codveda Technologies</h4>
-                    <p class="experience-meta"><time datetime="2026-08-26">26 August 2026</time> – <time datetime="2026-09-27">27 September 2026</time> · Remote</p>
-                    <ul class="experience-contributions">
-                        <li>Built <a href="https://rachit1807.github.io/Task-1-FitForge-Landing-Page/" target="_blank" rel="noopener noreferrer">FitForge</a>, a responsive landing page using semantic HTML, CSS Grid and Flexbox, and mobile-first media queries.</li>
-                        <li>Built <a href="https://rachit1807.github.io/Premium-Counter-App/" target="_blank" rel="noopener noreferrer">Premium Counter App</a> with increment, decrement and reset controls, keyboard shortcuts, dark mode, progress tracking, and local storage.</li>
-                        <li>Collaborated on cross-device UI work and used Git and GitHub for version control.</li>
-                    </ul>
-                </div>
-            </article>
+          <article class="timeline-item">
+            <div class="timeline-content">
+              <h3>Full-Stack Web Development Intern</h3>
+              <h4>CodeMore</h4>
+              <p class="experience-meta">
+                <time datetime="2026-09-29">29 September 2026</time> – Present ·
+                Remote
+              </p>
+              <p>
+                Working remotely on assigned full-stack development tasks and
+                projects. The internship capstone is
+                <a href="#project-ai-code-review">AI Code Review</a>, with a
+                React frontend, backend APIs, authentication and authorization,
+                and database integration.
+              </p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-content">
+              <h3>Front-End Development Intern</h3>
+              <h4>Codveda Technologies</h4>
+              <p class="experience-meta">
+                <time datetime="2026-08-26">26 August 2026</time> –
+                <time datetime="2026-09-27">27 September 2026</time> · Remote
+              </p>
+              <ul class="experience-contributions">
+                <li>
+                  Built
+                  <a
+                    href="https://rachit1807.github.io/Task-1-FitForge-Landing-Page/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >FitForge</a
+                  >, a responsive landing page using semantic HTML, CSS Grid and
+                  Flexbox, and mobile-first media queries.
+                </li>
+                <li>
+                  Built
+                  <a
+                    href="https://rachit1807.github.io/Premium-Counter-App/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Premium Counter App</a
+                  >
+                  with increment, decrement and reset controls, keyboard
+                  shortcuts, dark mode, progress tracking, and local storage.
+                </li>
+                <li>
+                  Collaborated on cross-device UI work and used Git and GitHub
+                  for version control.
+                </li>
+              </ul>
+            </div>
+          </article>
         </div>
-    </section>
-
-    <!-- ================= PROJECTS ================= -->
-    <section class="section projects" id="projects">
+      </section>
+      <section class="section skills" id="skills">
         <div class="section-title">
-            <h2>Featured Projects</h2>
-            <p>Five case studies grounded in the code, docs, and current demos</p>
+          <p class="eyebrow">04 / THE TOOLKIT</p>
+          <h2>Tools of the craft.</h2>
+          <p>Skills shown by category, based on my project work</p>
         </div>
-        <div class="projects-container">
-            <article class="project-card" id="project-taskflow">
-                <p class="project-kicker">Flagship · Full-stack project management</p>
-                <h3>TaskFlow Pro</h3>
-                <p>A workspace-based project management app for organizing teams, projects, and Kanban tasks.</p>
-                <div class="project-gallery" aria-label="TaskFlow Pro project screenshots">
-                    <figure class="project-media">
-                        <img src="assets/images/projects/taskflow-dashboard.jpg" alt="TaskFlow Pro demo workspace dashboard showing summary cards, a task list, and team activity" loading="lazy">
-                        <figcaption>Repository screenshot; dashboard values are sample data.</figcaption>
-                    </figure>
-                    <figure class="project-media">
-                        <img src="assets/images/projects/taskflow-board.jpg" alt="TaskFlow Pro demo Kanban board with Backlog, In Progress, In Review, and Done columns" loading="lazy">
-                        <figcaption>Kanban view from the project README.</figcaption>
-                    </figure>
-                </div>
-                <div class="project-tech"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span></div>
-                <details class="case-study">
-                    <summary>Read the case study</summary>
-                    <div class="case-study-content">
-                        <div><h4>Problem and approach</h4><p>Teams need a shared place to plan work while keeping workspace membership and project activity scoped. TaskFlow combines workspace roles with project boards, task assignment, comments, attachments, notifications, and activity history.</p></div>
-                        <div>
-                            <h4>Architecture</h4>
-                            <ol class="architecture-flow" aria-label="TaskFlow Pro architecture">
-                                <li><strong>React + Vite</strong><span>Workspace and board UI</span></li>
-                                <li><strong>Express API</strong><span>Auth, roles, project and task requests</span></li>
-                                <li><strong>MongoDB</strong><span>Workspace and project data</span></li>
-                            </ol>
-                        </div>
-                        <div><h4>Quality and demo</h4><ul><li>The repository README documents local setup, environment variables, architecture, and the API health route. Its root package manifest does not list an automated test command.</li><li>Open the public demo to browse the sample workspace. Sign in to save changes.</li></ul></div>
-                    </div>
-                </details>
-                <div class="project-links">
-                    <a href="https://taskflow-pro-web.onrender.com/" target="_blank" rel="noopener noreferrer" aria-label="Open TaskFlow Pro live demo in a new tab">Live demo</a>
-                    <a href="https://github.com/rachit1807/TaskFlow-Pro" target="_blank" rel="noopener noreferrer" aria-label="Open TaskFlow Pro source and documentation in a new tab">Source &amp; docs</a>
-                </div>
-            </article>
-
-            <article class="project-card" id="project-ai-code-review">
-                <p class="project-kicker">CodeMore internship capstone · AI-assisted review</p>
-                <h3>AI Code Review</h3>
-                <p>A full-stack code review tool that sends submitted code to an Ollama model and presents structured feedback.</p>
-                <div class="project-tech"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Ollama</span></div>
-                <details class="case-study">
-                    <summary>Read the case study</summary>
-                    <div class="case-study-content">
-                        <div><h4>Problem and approach</h4><p>The capstone explores how a developer can get a consistent first-pass review format. The review prompt asks the model for strengths, severity-labelled issues, suggestions, and an improved-code section; generated feedback still needs human review.</p></div>
-                        <div>
-                            <h4>Architecture</h4>
-                            <ol class="architecture-flow" aria-label="AI Code Review architecture">
-                                <li><strong>React client</strong><span>Code input and review results</span></li>
-                                <li><strong>Express API</strong><span>Auth and review request handling</span></li>
-                                <li><strong>Ollama</strong><span>Configured local or remote model endpoint</span></li>
-                                <li><strong>MongoDB</strong><span>User and review records</span></li>
-                            </ol>
-                        </div>
-                        <div><h4>Quality and demo</h4><ul><li>The README has an API endpoint reference and manual Postman verification steps. The backend <code>npm test</code> script is a placeholder, so no automated test suite is claimed.</li><li>Try a short, non-confidential code sample. Review generation depends on the Ollama endpoint configured for the service.</li></ul></div>
-                    </div>
-                </details>
-                <div class="project-links">
-                    <a href="https://ai-code-review-n5gt.onrender.com/" target="_blank" rel="noopener noreferrer" aria-label="Open AI Code Review live demo in a new tab">Live demo</a>
-                    <a href="https://github.com/rachit1807/AI-Code-Review" target="_blank" rel="noopener noreferrer" aria-label="Open AI Code Review source and API documentation in a new tab">Source &amp; API docs</a>
-                </div>
-            </article>
-
-            <article class="project-card" id="project-teamhub">
-                <p class="project-kicker">Full-stack · Workspace access control</p>
-                <h3>TeamHub RBAC</h3>
-                <p>A team workspace app with JWT sign-in, role-based access, project boards, task workflows, comments, and dashboards.</p>
-                <figure class="project-media">
-                    <img src="assets/images/projects/teamhub-dashboard.jpg" alt="TeamHub workspace dashboard with workspace, project, and task panels" loading="lazy">
-                    <figcaption>Workspace dashboard screenshot from the project repository.</figcaption>
-                </figure>
-                <div class="project-tech"><span>Node.js</span><span>Express</span><span>Sequelize</span><span>PostgreSQL</span><span>JWT</span></div>
-                <details class="case-study">
-                    <summary>Read the case study</summary>
-                    <div class="case-study-content">
-                        <div><h4>Problem and approach</h4><p>Workspace, project, and task routes need to respect membership and role boundaries. TeamHub applies authentication and role checks around workspace operations, with separate models for workspaces, members, projects, tasks, and comments.</p></div>
-                        <div>
-                            <h4>Architecture</h4>
-                            <ol class="architecture-flow" aria-label="TeamHub RBAC architecture">
-                                <li><strong>Browser UI</strong><span>Workspace and task views</span></li>
-                                <li><strong>Express API</strong><span>JWT authentication and access checks</span></li>
-                                <li><strong>Sequelize</strong><span>Models and database access</span></li>
-                                <li><strong>PostgreSQL</strong><span>Live demo; SQLite for local runs</span></li>
-                            </ol>
-                        </div>
-                        <div><h4>Quality and demo</h4><ul><li>GitHub Actions runs <code>npm run check</code> on pushes and pull requests; that script checks JavaScript syntax. The README documents API routes, and the Postman collection covers auth, validation, authorization, and task flows.</li><li>The free web service may take 50 seconds or more to wake after inactivity. Render inspection on <time datetime="2026-10-11">October 11, 2026</time> found the PostgreSQL database available and scheduled to expire on <strong>November 9, 2026</strong>.</li><li>Use a disposable demo account and sample data. Renew or replace the database before its expiry if the demo must retain its data.</li></ul></div>
-                    </div>
-                </details>
-                <div class="project-links">
-                    <a href="https://teamhub-rbac.onrender.com/" target="_blank" rel="noopener noreferrer" aria-label="Open TeamHub RBAC live demo in a new tab">Live demo</a>
-                    <a href="https://teamhub-rbac.onrender.com/api/health" target="_blank" rel="noopener noreferrer" aria-label="Open TeamHub RBAC API health endpoint in a new tab">API health</a>
-                    <a href="https://github.com/rachit1807/TeamHub-RBAC" target="_blank" rel="noopener noreferrer" aria-label="Open TeamHub RBAC source, API docs, and Postman collection in a new tab">Source &amp; API docs</a>
-                </div>
-            </article>
-
-            <article class="project-card" id="project-resume-analyzer">
-                <p class="project-kicker">Career tools · NLP and matching</p>
-                <h3>AI Resume Analyzer</h3>
-                <p>A Flask career platform for resume analysis, job matching, skill gaps, candidate tools, and recruiter workflows.</p>
-                <div class="project-tech"><span>Python</span><span>Flask</span><span>TF-IDF</span><span>scikit-learn</span><span>PostgreSQL</span></div>
-                <details class="case-study">
-                    <summary>Read the case study</summary>
-                    <div class="case-study-content">
-                        <div><h4>Problem and approach</h4><p>Applicants need an understandable view of resume coverage against a role. The analyzer extracts text from text-based PDFs, calculates an ATS-style completeness score, compares resume and job text with TF-IDF and cosine similarity, and reports skills from a defined catalogue. These are estimates and heuristics, not hiring recommendations.</p></div>
-                        <div>
-                            <h4>Architecture</h4>
-                            <ol class="architecture-flow" aria-label="AI Resume Analyzer architecture">
-                                <li><strong>Flask views</strong><span>Anonymous analysis and account tools</span></li>
-                                <li><strong>Parser + services</strong><span>PDF text, scoring, matching, guidance</span></li>
-                                <li><strong>SQLAlchemy</strong><span>Candidate, recruiter, and report records</span></li>
-                                <li><strong>SQLite / PostgreSQL</strong><span>Local fallback / durable deployment</span></li>
-                            </ol>
-                        </div>
-                        <div><h4>Quality and demo</h4><ul><li>Automated route and service tests are included under <code>tests/</code> and run with <code>pytest</code>. The README says tests use isolated SQLite databases and do not send email or call external AI services.</li><li>Try the anonymous analyzer with a text-based sample or redacted PDF and a target job description. Account history and recruiter workflows require durable PostgreSQL; the app's resume tools use local rules and templates rather than a hosted language model.</li></ul></div>
-                    </div>
-                </details>
-                <div class="project-links">
-                    <a href="https://ai-resume-analyzer-rachit.onrender.com/" target="_blank" rel="noopener noreferrer" aria-label="Open AI Resume Analyzer live demo in a new tab">Live demo</a>
-                    <a href="https://ai-resume-analyzer-rachit.onrender.com/health" target="_blank" rel="noopener noreferrer" aria-label="Open AI Resume Analyzer health endpoint in a new tab">Health</a>
-                    <a href="https://github.com/rachit1807/AI_RESUME_ANALYZER" target="_blank" rel="noopener noreferrer" aria-label="Open AI Resume Analyzer source, tests, and documentation in a new tab">Source &amp; tests</a>
-                </div>
-            </article>
-
-            <article class="project-card" id="project-smartloan">
-                <p class="project-kicker">Educational demo · Machine learning</p>
-                <h3>SmartLoanAI</h3>
-                <p>A loan workflow demo combining applicant and admin screens, FastAPI endpoints, an ML estimate, and document review.</p>
-                <div class="project-tech"><span>React</span><span>FastAPI</span><span>Python</span><span>scikit-learn</span><span>PostgreSQL</span></div>
-                <details class="case-study">
-                    <summary>Read the case study</summary>
-                    <div class="case-study-content">
-                        <div><h4>Problem and approach</h4><p>The project models an application review flow with an eligibility estimate, repayment calculations, and document checks. Its code keeps document verification status separate from the loan decision, so reviewing a file does not silently approve or reject an application.</p></div>
-                        <div>
-                            <h4>Architecture</h4>
-                            <ol class="architecture-flow" aria-label="SmartLoanAI architecture">
-                                <li><strong>React app</strong><span>Applicant and admin screens</span></li>
-                                <li><strong>FastAPI</strong><span>Auth, loan, document, and admin routes</span></li>
-                                <li><strong>ML + calculations</strong><span>Eligibility estimate and repayment figures</span></li>
-                                <li><strong>SQL database</strong><span>Neon PostgreSQL live; SQLite local</span></li>
-                            </ol>
-                        </div>
-                        <div><h4>Quality and demo</h4><ul><li><code>backend/test_decision_isolation.py</code> is an included regression script using an in-memory SQLite database. FastAPI exposes interactive API docs at <code>/docs</code>.</li><li>This is an educational demonstration, not a lending decision service. Use sample financial details and documents only. The README notes that uploaded file contents use Render's local filesystem and may not survive a restart or redeploy.</li></ul></div>
-                    </div>
-                </details>
-                <div class="project-links">
-                    <a href="https://smart-loan-ai-one.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open SmartLoanAI live demo in a new tab">Live demo</a>
-                    <a href="https://smartloanai-api.onrender.com/docs" target="_blank" rel="noopener noreferrer" aria-label="Open SmartLoanAI interactive API docs in a new tab">API docs</a>
-                    <a href="https://github.com/rachit1807/SmartLoanAI" target="_blank" rel="noopener noreferrer" aria-label="Open SmartLoanAI source and documentation in a new tab">Source</a>
-                </div>
-            </article>
+        <div class="skills-container">
+          <article class="skill-card">
+            <i class="fas fa-code" aria-hidden="true"></i>
+            <h3>Languages</h3>
+            <ul class="skill-list">
+              <li>Java</li>
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>SQL</li>
+            </ul>
+          </article>
+          <article class="skill-card">
+            <i class="fas fa-laptop-code" aria-hidden="true"></i>
+            <h3>Frontend</h3>
+            <ul class="skill-list">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>React</li>
+              <li>Responsive UI</li>
+            </ul>
+          </article>
+          <article class="skill-card">
+            <i class="fas fa-server" aria-hidden="true"></i>
+            <h3>Backend &amp; APIs</h3>
+            <ul class="skill-list">
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>Flask</li>
+              <li>FastAPI</li>
+              <li>REST</li>
+              <li>Authentication &amp; authorization</li>
+            </ul>
+          </article>
+          <article class="skill-card">
+            <i class="fas fa-database" aria-hidden="true"></i>
+            <h3>Data</h3>
+            <ul class="skill-list">
+              <li>MongoDB</li>
+              <li>PostgreSQL</li>
+              <li>SQLite</li>
+              <li>SQLAlchemy</li>
+            </ul>
+          </article>
+          <article class="skill-card">
+            <i class="fas fa-brain" aria-hidden="true"></i>
+            <h3>AI &amp; Machine Learning</h3>
+            <ul class="skill-list">
+              <li>scikit-learn</li>
+              <li>TF-IDF</li>
+              <li>NLP basics</li>
+              <li>Model training</li>
+              <li>Feature engineering</li>
+            </ul>
+          </article>
+          <article class="skill-card">
+            <i class="fas fa-screwdriver-wrench" aria-hidden="true"></i>
+            <h3>Tools &amp; Practices</h3>
+            <ul class="skill-list">
+              <li>Git &amp; GitHub</li>
+              <li>Postman</li>
+              <li>pytest</li>
+              <li>GitHub Actions</li>
+              <li>Render</li>
+              <li>Vercel</li>
+              <li>GitHub Pages</li>
+            </ul>
+          </article>
         </div>
-        <p class="additional-projects">These are my five featured projects. <a href="https://github.com/rachit1807" target="_blank" rel="noopener noreferrer">Explore the rest of my projects on GitHub</a>.</p>
-    </section>
-
-    <!-- ================= CERTIFICATES ================= -->
-
-    <section class="section certificates" id="certificates">
-
+      </section>
+      <section class="section achievements" aria-labelledby="focus-title">
         <div class="section-title">
+          <h2 id="focus-title">Focus Areas</h2>
+          <p>Recurring themes across my projects</p>
+        </div>
+        <div class="achievement-container">
+          <article class="achievement-card">
+            <h3>Full-stack products</h3>
+            <p>
+              Responsive interfaces, REST APIs, authentication, and
+              database-backed workflows.
+            </p>
+          </article>
+          <article class="achievement-card">
+            <h3>Access and data</h3>
+            <p>
+              Workspace roles, authorization boundaries, relational data, and
+              document workflows.
+            </p>
+          </article>
+          <article class="achievement-card">
+            <h3>Practical ML and NLP</h3>
+            <p>
+              Resume matching, scikit-learn models, feature engineering, and
+              transparent demo limitations.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="section certificates" id="certificates">
+        <div class="section-title">
+          <p class="eyebrow">05 / THE MILESTONES</p>
+          <h2>Training &amp; recognition.</h2>
 
-            <h2>Training &amp; Recognition</h2>
-
-            <p>Programs completed and peer mentorship</p>
-
+          <p>Programs completed and peer mentorship</p>
         </div>
 
         <div class="certificate-container">
+          <div class="certificate-card">
+            <i class="fas fa-award" aria-hidden="true"></i>
 
-            <div class="certificate-card">
+            <h3>Web Development Training</h3>
 
-                <i class="fas fa-award"></i>
+            <h4>Acmegrade × Mood Indigo, IIT Bombay</h4>
 
-                <h3>Web Development Training</h3>
+            <p>
+              Completed industry-oriented Web Development Training covering
+              HTML, CSS, JavaScript and Backend Integration through hands-on
+              projects.
+            </p>
 
-                <h4>Acmegrade × Mood Indigo, IIT Bombay</h4>
+            <span>Nov 2024 – Dec 2024</span>
+          </div>
 
-                <p>
+          <div class="certificate-card">
+            <i class="fas fa-code" aria-hidden="true"></i>
 
-                    Completed industry-oriented Web Development Training covering
-                    HTML, CSS, JavaScript and Backend Integration through
-                    hands-on projects.
+            <h3>Java Programming Training</h3>
 
-                </p>
+            <h4>Learnovate Enterprises</h4>
 
-                <span>Nov 2024 – Dec 2024</span>
+            <p>
+              Successfully completed Java Programming Training with hands-on
+              coding exercises and practical programming projects.
+            </p>
 
-            </div>
+            <span>May 2025</span>
+          </div>
 
-            <div class="certificate-card">
+          <article class="certificate-card certificate-proof-card">
+            <i class="fas fa-certificate" aria-hidden="true"></i>
+            <h3>Front-End Development Internship</h3>
+            <h4>Codveda Technologies</h4>
+            <p>
+              Internship completion certificate for front-end development work
+              from August to September 2026.
+            </p>
+            <time datetime="2026-10-05">Certificate dated October 5, 2026</time>
+            <details class="certificate-details">
+              <summary>View certificate</summary>
+              <figure class="certificate-image">
+                <a
+                  href="assets/images/certifications/codveda-internship-completion.jpeg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open the full-size Codveda internship certificate in a new tab"
+                >
+                  <img
+                    src="assets/images/certifications/codveda-internship-completion.jpeg"
+                    alt="Codveda Technologies internship completion certificate for Rachit Tripathi, dated 05-10-2026"
+                    loading="lazy"
+                  />
+                </a>
+                <figcaption>
+                  Original certificate supplied by Rachit. The printed date is
+                  05-10-2026.
+                </figcaption>
+              </figure>
+            </details>
+          </article>
 
-                <i class="fas fa-code"></i>
+          <div class="certificate-card">
+            <i class="fas fa-user-tie" aria-hidden="true"></i>
 
-                <h3>Java Programming Training</h3>
+            <h3>Department Mentor</h3>
 
-                <h4>Learnovate Enterprises</h4>
+            <h4>Learnovate Enterprises</h4>
 
-                <p>
+            <p>
+              Selected as Department Mentor for the Soft Skills Training
+              Program, mentoring students and assisting throughout the training
+              sessions.
+            </p>
 
-                    Successfully completed Java Programming Training with
-                    hands-on coding exercises and practical programming projects.
-
-                </p>
-
-                <span>May 2025</span>
-
-            </div>
-
-            <article class="certificate-card certificate-proof-card">
-                <i class="fas fa-certificate" aria-hidden="true"></i>
-                <h3>Front-End Development Internship</h3>
-                <h4>Codveda Technologies</h4>
-                <p>Internship completion certificate for front-end development work from August to September 2026.</p>
-                <time datetime="2026-10-05">Certificate dated October 5, 2026</time>
-                <details class="certificate-details">
-                    <summary>View certificate</summary>
-                    <figure class="certificate-image">
-                        <a href="assets/images/certifications/codveda-internship-completion.jpeg" target="_blank" rel="noopener noreferrer" aria-label="Open the full-size Codveda internship certificate in a new tab">
-                            <img src="assets/images/certifications/codveda-internship-completion.jpeg" alt="Codveda Technologies internship completion certificate for Rachit Tripathi, dated 05-10-2026" loading="lazy">
-                        </a>
-                        <figcaption>Original certificate supplied by Rachit. The printed date is 05-10-2026.</figcaption>
-                    </figure>
-                </details>
-            </article>
-
-            <div class="certificate-card">
-
-                <i class="fas fa-user-tie"></i>
-
-                <h3>Department Mentor</h3>
-
-                <h4>Learnovate Enterprises</h4>
-
-                <p>
-
-                    Selected as Department Mentor for the Soft Skills Training
-                    Program, mentoring students and assisting throughout the
-                    training sessions.
-
-                </p>
-
-                <time datetime="2024-12">December 2024</time>
-
-            </div>
-
+            <time datetime="2024-12">December 2024</time>
+          </div>
         </div>
-
-    </section>
-
-    <!-- ================= EDUCATION ================= -->
-
-    <section class="section education" id="education">
-
+      </section>
+      <section class="section education" id="education">
         <div class="section-title">
+          <p class="eyebrow">06 / THE FOUNDATION</p>
+          <h2>Always a student.</h2>
 
-            <h2>Education</h2>
-
-            <p>Academic Background</p>
-
+          <p>Academic Background</p>
         </div>
 
         <div class="education-container">
+          <div class="education-card">
+            <h3>Bachelor of Technology</h3>
 
-            <div class="education-card">
+            <h4>Information Technology</h4>
 
-                <h3>Bachelor of Technology</h3>
+            <p>
+              Babu Banarasi Das Northern India Institute of Technology, Lucknow
+            </p>
 
-                <h4>Information Technology</h4>
+            <span> Dr. A.P.J. Abdul Kalam Technical University </span>
 
-                <p>
+            <h5>Expected Graduation : 2027</h5>
+          </div>
 
-                    Babu Banarasi Das Northern India Institute of Technology,
-                    Lucknow
+          <div class="education-card">
+            <h3>Class XII</h3>
 
-                </p>
+            <p>Dr. Sudama Prasad Vidyasthali</p>
 
-                <span>
+            <span> CBSE • 2022 </span>
+          </div>
 
-                    Dr. A.P.J. Abdul Kalam Technical University
+          <div class="education-card">
+            <h3>Class X</h3>
 
-                </span>
+            <p>Dr. Sudama Prasad Vidyasthali</p>
 
-                <h5>Expected Graduation : 2027</h5>
-
-            </div>
-
-            <div class="education-card">
-
-                <h3>Class XII</h3>
-
-                <p>
-
-                    Dr. Sudama Prasad Vidyasthali
-
-                </p>
-
-                <span>
-
-                    CBSE • 2022
-
-                </span>
-
-            </div>
-
-            <div class="education-card">
-
-                <h3>Class X</h3>
-
-                <p>
-
-                    Dr. Sudama Prasad Vidyasthali
-
-                </p>
-
-                <span>
-
-                    CBSE • 2020
-
-                </span>
-
-            </div>
-
+            <span> CBSE • 2020 </span>
+          </div>
         </div>
-
-    </section>
-
-    <!-- ================= ACHIEVEMENTS ================= -->
-    <section class="section achievements" aria-labelledby="focus-title">
+      </section>
+      <section class="section resume" id="resume">
+        <div>
+          <p class="eyebrow">THE COMPLETE STORY</p>
+          <h2>A little more<br />on paper.</h2>
+          <p>
+            Experience, education, projects, and technical skills — in one
+            place.
+          </p>
+        </div>
+        <div class="resume-card">
+          <span class="resume-monogram" aria-hidden="true">RT.</span>
+          <div>
+            <h3>Rachit Tripathi</h3>
+            <p>Aspiring Software Engineer · B.Tech IT</p>
+          </div>
+          <div class="resume-actions">
+            <a
+              class="btn"
+              href="assets/resume/Rachit_Tripathi_Resume.pdf"
+              target="_blank"
+              rel="noopener"
+              >View resume ↗</a
+            ><a
+              class="btn-outline"
+              href="assets/resume/Rachit_Tripathi_Resume.pdf"
+              download
+              >Download PDF ↓</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="section contact" id="contact">
         <div class="section-title">
-            <h2 id="focus-title">Focus Areas</h2>
-            <p>Recurring themes across my projects</p>
-        </div>
-        <div class="achievement-container">
-            <article class="achievement-card"><h3>Full-stack products</h3><p>Responsive interfaces, REST APIs, authentication, and database-backed workflows.</p></article>
-            <article class="achievement-card"><h3>Access and data</h3><p>Workspace roles, authorization boundaries, relational data, and document workflows.</p></article>
-            <article class="achievement-card"><h3>Practical ML and NLP</h3><p>Resume matching, scikit-learn models, feature engineering, and transparent demo limitations.</p></article>
-        </div>
-    </section>
+          <p class="eyebrow">TO BE CONTINUED</p>
+          <h2>Let’s build<br /><span>what’s next.</span></h2>
 
-    <!-- ================= CONTACT ================= -->
-
-    <section class="section contact" id="contact">
-
-        <div class="section-title">
-
-            <h2>Contact Me</h2>
-
-            <p>Let's Connect</p>
-
+          <p>
+            Open to internships, early-career roles, and good conversations.
+          </p>
         </div>
 
         <div class="contact-container">
-
-            <div class="contact-info">
-
-                <h3>Get In Touch</h3>
-
-                <p>
-
-                    I'm always open to discussing new opportunities,
-                    collaborations, internships and software development projects.
-
-                    Feel free to reach out!
-
-                </p>
-
-                <div class="contact-item">
-
-                    <i class="fas fa-envelope"></i>
-
-                    <a href="mailto:tripathirachit486@gmail.com">tripathirachit486@gmail.com</a>
-
-                </div>
-
-                <div class="contact-item">
-
-                    <i class="fas fa-phone"></i>
-
-                    <span>
-
-                        +91 9696977765
-
-                    </span>
-
-                </div>
-
-                <div class="contact-item">
-
-                    <i class="fas fa-location-dot"></i>
-
-                    <span>
-
-                        Lucknow, Uttar Pradesh, India
-
-                    </span>
-
-                </div>
-
-                <div class="social-links">
-
-                    <a href="https://github.com/rachit1807" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile in a new tab">
-
-                        <i class="fab fa-github"></i>
-
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/rachittripathi2509/" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile in a new tab">
-
-                        <i class="fab fa-linkedin"></i>
-
-                    </a>
-
-                    <a href="mailto:tripathirachit486@gmail.com" aria-label="Email Rachit">
-
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="contact-form contact-direct">
-                <h3>Prefer email?</h3>
-                <p>This portfolio is a static site and does not collect contact form submissions. Email me directly and your mail app will open.</p>
-                <a class="btn contact-email-link" href="mailto:tripathirachit486@gmail.com">Email Rachit</a>
-            </div>
-
-        </div>
-
-    </section>
-
-    </main>
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <div class="footer-content">
-
-            <h2>
-
-                Rachit Tripathi
-
-            </h2>
+          <div class="contact-info">
+            <h3>Get In Touch</h3>
 
             <p>
-
-                Aspiring Software Engineer • Full Stack Developer • AI Enthusiast
-
+              I'm always open to discussing new opportunities, collaborations,
+              internships and software development projects. Feel free to reach
+              out!
             </p>
 
-            <div class="footer-social">
+            <div class="contact-item">
+              <i class="fas fa-envelope" aria-hidden="true"></i
+              ><span>Email</span>
 
-                <a href="https://github.com/rachit1807" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile in a new tab">
-
-                    <i class="fab fa-github"></i>
-
-                </a>
-
-                <a href="https://www.linkedin.com/in/rachittripathi2509/" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile in a new tab">
-
-                    <i class="fab fa-linkedin"></i>
-
-                </a>
-
-                <a href="mailto:tripathirachit486@gmail.com">
-
-                    <i class="fas fa-envelope"></i>
-
-                </a>
-
+              <a href="mailto:tripathirachit486@gmail.com"
+                >tripathirachit486@gmail.com</a
+              >
             </div>
 
-            <p class="copyright">
+            <div class="contact-item">
+              <i class="fas fa-phone" aria-hidden="true"></i>
 
-                © 2026 Rachit Tripathi.
+              <span> +91 9696977765 </span>
+            </div>
 
-                All Rights Reserved.
+            <div class="contact-item">
+              <i class="fas fa-location-dot" aria-hidden="true"></i>
 
+              <span> Lucknow, Uttar Pradesh, India </span>
+            </div>
+
+            <div class="social-links">
+              <a
+                href="https://github.com/rachit1807"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open GitHub profile in a new tab"
+              >
+                <i class="fab fa-github" aria-hidden="true"></i
+                ><span>GitHub</span>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/rachittripathi2509/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open LinkedIn profile in a new tab"
+              >
+                <i class="fab fa-linkedin" aria-hidden="true"></i
+                ><span>LinkedIn</span>
+              </a>
+
+              <a
+                href="mailto:tripathirachit486@gmail.com"
+                aria-label="Email Rachit"
+              >
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form contact-direct">
+            <h3>Prefer email?</h3>
+            <p>
+              Have an opportunity, an idea, or a question about my work? My
+              inbox is open.
             </p>
-
+            <a
+              class="btn contact-email-link"
+              href="mailto:tripathirachit486@gmail.com"
+              >Email Rachit</a
+            >
+          </div>
         </div>
-
+      </section>
+    </main>
+    <footer>
+      <a class="logo-box" href="#home">RT<span>.</span></a>
+      <p>Made with curiosity. Refined with every commit.</p>
+      <span>© 2026 Rachit Tripathi</span
+      ><a href="#home">Back to the beginning ↑</a>
     </footer>
-
-    <!-- Scroll To Top -->
-
-    <button id="topBtn" type="button" aria-label="Scroll to top">
-
-        <i class="fas fa-arrow-up"></i>
-
+    <button id="topBtn" type="button" aria-label="Scroll to top" hidden>
+      ↑
     </button>
-
-    <script src="script.js?v=portfolio-v7"></script>
-
-</body>
-
+    <dialog
+      id="project-dialog"
+      class="project-dialog"
+      aria-labelledby="project-dialog-title"
+    >
+      <button
+        class="dialog-close"
+        type="button"
+        aria-label="Close project case study"
+      >
+        ✕
+      </button>
+      <div id="project-dialog-content">
+        <h2 id="project-dialog-title">Project case study</h2>
+      </div>
+    </dialog>
+    <dialog
+      id="intro-dialog"
+      class="intro-dialog"
+      aria-labelledby="intro-title"
+    >
+      <button class="dialog-close" type="button" aria-label="Close intro">
+        ✕
+      </button>
+      <p class="series-mark"><span>RT</span> ORIGINAL / THE INTRO</p>
+      <div class="intro-slides">
+        <div class="intro-slide">
+          <p class="eyebrow">01 / THE PERSON</p>
+          <h2 id="intro-title">Hi, I’m Rachit.</h2>
+          <p>
+            An IT undergraduate at Babu Banarasi Das Northern India Institute of
+            Technology, Lucknow. I enjoy turning ideas into working software.
+          </p>
+        </div>
+        <div class="intro-slide" hidden>
+          <p class="eyebrow">02 / THE PRACTICE</p>
+          <h2>Learn. Build. Repeat.</h2>
+          <p>
+            From front-end work at Codveda Technologies to a full-stack
+            internship at CodeMore, I learn through real projects, debugging,
+            and iteration.
+          </p>
+        </div>
+        <div class="intro-slide" hidden>
+          <p class="eyebrow">03 / THE WORK</p>
+          <h2>Five stories in code.</h2>
+          <p>
+            Project management. AI code review. Workspace authorization. Resume
+            matching. Loan workflows. Explore the decisions and architecture
+            behind each build.
+          </p>
+          <a href="#projects" class="btn" id="intro-explore"
+            >Explore the originals ↗</a
+          >
+        </div>
+      </div>
+      <div class="intro-controls">
+        <button type="button" id="intro-prev" aria-label="Previous intro slide">
+          ←
+        </button>
+        <p id="intro-status" role="status" aria-live="polite">01 / 03</p>
+        <button type="button" id="intro-next" aria-label="Next intro slide">
+          →
+        </button>
+      </div>
+    </dialog>
+    <script src="script.js?v=emerald-1"></script>
+  </body>
 </html>

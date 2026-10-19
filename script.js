@@ -1,223 +1,277 @@
+"use strict";
+document.documentElement.classList.add("js");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const motionBehavior = () => (reducedMotion.matches ? "instant" : "smooth");
 const menuBtn = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
-const siteHeader = document.querySelector(".site-header");
-
-function setMenuOpen(open) {
-    if (!menuBtn || !navLinks) return;
-    navLinks.classList.toggle("active", open);
-    menuBtn.setAttribute("aria-expanded", String(open));
-    menuBtn.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
-    const icon = menuBtn.querySelector("i");
-    if (icon) {
-        icon.classList.toggle("fa-bars", !open);
-        icon.classList.toggle("fa-xmark", open);
-    }
+function setMenuOpen(open, returnFocus = false) {
+  navLinks.classList.toggle("active", open);
+  menuBtn.setAttribute("aria-expanded", String(open));
+  menuBtn.setAttribute(
+    "aria-label",
+    open ? "Close navigation menu" : "Open navigation menu",
+  );
+  menuBtn.firstElementChild.textContent = open ? "✕" : "☰";
+  if (returnFocus) menuBtn.focus();
 }
-
-if (menuBtn && navLinks) {
-    menuBtn.addEventListener("click", () => {
-        setMenuOpen(menuBtn.getAttribute("aria-expanded") !== "true");
-    });
-
-    navLinks.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => setMenuOpen(false));
-    });
-
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && navLinks.classList.contains("active")) {
-            setMenuOpen(false);
-            menuBtn.focus();
-        }
-    });
-}
-
-const topBtn = document.getElementById("topBtn");
-const progressBar = document.getElementById("progress-bar");
-
-function updateScrollState() {
-    if (topBtn) topBtn.style.display = window.scrollY > 300 ? "block" : "none";
-    if (siteHeader) siteHeader.classList.toggle("scrolled", window.scrollY > 12);
-
-    if (progressBar) {
-        const scrollableHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
-        progressBar.style.width = `${progress}%`;
-    }
-}
-
-window.addEventListener("scroll", updateScrollState, { passive: true });
-updateScrollState();
-
-topBtn?.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
-});
-
-const sections = document.querySelectorAll("main > section[id]");
-const navItems = document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll", () => {
-    let current = "";
-    sections.forEach((section) => {
-        if (window.scrollY >= section.offsetTop - 120) current = section.id;
-    });
-
-    navItems.forEach((link) => {
-        const active = link.getAttribute("href") === `#${current}`;
-        link.classList.toggle("active", active);
-        if (active) link.setAttribute("aria-current", "location");
-        else link.removeAttribute("aria-current");
-    });
-}, { passive: true });
-
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-const developerIcons = ["fa-code", "fa-laptop-code", "fa-terminal", "fa-database", "fa-microchip", "fa-network-wired", "fa-bug", "fa-server"];
-document.querySelectorAll("main > section, footer").forEach((surface, index) => {
-    const atmosphere = document.createElement("div");
-    atmosphere.className = "developer-atmosphere";
-    atmosphere.setAttribute("aria-hidden", "true");
-
-    [index % developerIcons.length, (index + 3) % developerIcons.length].forEach((iconIndex, slot) => {
-        const icon = document.createElement("i");
-        icon.className = `developer-symbol developer-symbol-${slot + 1} fas ${developerIcons[iconIndex]}`;
-        icon.setAttribute("aria-hidden", "true");
-        atmosphere.append(icon);
-    });
-
-    surface.prepend(atmosphere);
-});
-
-const profileCard = document.querySelector(".profile-card");
-profileCard?.addEventListener("click", () => {
-    if (reducedMotion) return;
-    profileCard.classList.remove("is-orbiting");
-    void profileCard.offsetWidth;
-    profileCard.classList.add("is-orbiting");
-});
-profileCard?.addEventListener("animationend", (event) => {
-    if (event.animationName === "portrait-orbit") profileCard.classList.remove("is-orbiting");
-});
-
-const lightningTargets = ".profile-card,.about-image,.about-content,.info-box,.skill-card,.timeline-content,.project-card,.certificate-card,.education-card,.achievement-card,.contact-info,.contact-form";
-const lightLightningTargets = ".about-image,.about-content,.info-box,.timeline-content,.certificate-card,.education-card,.achievement-card";
-const strikeTimers = new WeakMap();
-const svgNamespace = "http://www.w3.org/2000/svg";
-
-function makeLightningPath(svg, points, className) {
-    const path = document.createElementNS(svgNamespace, "path");
-    const d = points.map(([x, y], index) => `${index === 0 ? "M" : "L"} ${x.toFixed(1)} ${y.toFixed(1)}`).join(" ");
-    path.setAttribute("d", d);
-    path.setAttribute("pathLength", "100");
-    path.setAttribute("class", className);
-    svg.append(path);
-}
-
-function strikeBox(target, event) {
-    const previousTimer = strikeTimers.get(target);
-    if (previousTimer) clearTimeout(previousTimer);
-    target.querySelector(":scope > .lightning-strike")?.remove();
-    target.classList.remove("lightning-struck", "lightning-static", "lightning-static-light");
-
-    if (reducedMotion) {
-        target.classList.add("lightning-static");
-        if (target.matches(lightLightningTargets)) target.classList.add("lightning-static-light");
-        strikeTimers.set(target, setTimeout(() => target.classList.remove("lightning-static", "lightning-static-light"), 650));
-        return;
-    }
-
-    const bounds = target.getBoundingClientRect();
-    const width = Math.max(bounds.width, 1);
-    const height = Math.max(bounds.height, 1);
-    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-    const originX = clamp(event.clientX - bounds.left, 4, width - 4);
-    const originY = clamp(event.clientY - bounds.top, 4, height - 4);
-    const horizontal = originX < width / 2 ? 1 : -1;
-    const vertical = originY < height / 2 ? 1 : -1;
-    const point = (x, y) => [clamp(x, 2, width - 2), clamp(y, 2, height - 2)];
-    const bolt = [
-        point(originX, originY),
-        point(originX + horizontal * width * .13, originY + vertical * height * .17),
-        point(originX + horizontal * width * .04, originY + vertical * height * .31),
-        point(originX + horizontal * width * .2, originY + vertical * height * .45),
-        point(originX + horizontal * width * .1, originY + vertical * height * .61),
-        point(originX - horizontal * width * .03, originY + vertical * height * .83)
-    ];
-    const branchOne = [bolt[1], point(bolt[1][0] - horizontal * width * .15, bolt[1][1] + vertical * height * .09), point(bolt[1][0] - horizontal * width * .12, bolt[1][1] + vertical * height * .19)];
-    const branchTwo = [bolt[3], point(bolt[3][0] + horizontal * width * .14, bolt[3][1] + vertical * height * .08), point(bolt[3][0] + horizontal * width * .18, bolt[3][1] + vertical * height * .18)];
-
-    const flash = document.createElement("span");
-    flash.className = "lightning-strike";
-    if (target.matches(lightLightningTargets)) flash.classList.add("lightning-on-light");
-    flash.setAttribute("aria-hidden", "true");
-    flash.style.setProperty("--strike-x", `${originX}px`);
-    flash.style.setProperty("--strike-y", `${originY}px`);
-
-    const svg = document.createElementNS(svgNamespace, "svg");
-    svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
-    svg.setAttribute("preserveAspectRatio", "none");
-    makeLightningPath(svg, bolt, "bolt-glow");
-    makeLightningPath(svg, bolt, "bolt-core");
-    makeLightningPath(svg, branchOne, "bolt-glow");
-    makeLightningPath(svg, branchOne, "bolt-core");
-    makeLightningPath(svg, branchTwo, "bolt-glow");
-    makeLightningPath(svg, branchTwo, "bolt-core");
-    flash.append(svg);
-    target.append(flash);
-
-    target.classList.remove("lightning-struck");
-    void target.offsetWidth;
-    target.classList.add("lightning-struck");
-
-    const cleanup = () => {
-        if (target.querySelector(":scope > .lightning-strike") === flash) flash.remove();
-        target.classList.remove("lightning-struck");
-        strikeTimers.delete(target);
-    };
-    flash.addEventListener("animationend", (animationEvent) => {
-        if (animationEvent.target === flash && animationEvent.animationName === "lightning-wash") cleanup();
-    });
-    strikeTimers.set(target, setTimeout(cleanup, 800));
-}
-
+menuBtn.addEventListener("click", () =>
+  setMenuOpen(menuBtn.getAttribute("aria-expanded") !== "true"),
+);
+navLinks
+  .querySelectorAll("a")
+  .forEach((link) => link.addEventListener("click", () => setMenuOpen(false)));
 document.addEventListener("click", (event) => {
-    const target = event.target instanceof Element ? event.target.closest(lightningTargets) : null;
-    if (target) strikeBox(target, event);
+  if (!event.target.closest(".navbar")) setMenuOpen(false);
+});
+document.addEventListener("keydown", (event) => {
+  if (
+    event.key === "Escape" &&
+    menuBtn.getAttribute("aria-expanded") === "true"
+  )
+    setMenuOpen(false, true);
+});
+window
+  .matchMedia("(min-width: 801px)")
+  .addEventListener("change", () => setMenuOpen(false));
+
+const topBtn = document.querySelector("#topBtn");
+const progressBar = document.querySelector("#progress-bar");
+const sections = [...document.querySelectorAll("main > section[id]")];
+const navItems = [...navLinks.querySelectorAll("a")];
+const chapterProgress = [...document.querySelectorAll(".chapter-progress")].map(
+  (bar) => ({
+    bar,
+    section: document.getElementById(bar.dataset.section),
+    seen: 0,
+  }),
+);
+let scrollFrame = 0;
+function updateScrollState() {
+  scrollFrame = 0;
+  topBtn.hidden = window.scrollY < 400;
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = `${scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0}%`;
+  let current = "home";
+  sections.forEach((section) => {
+    if (section.getBoundingClientRect().top < 150) current = section.id;
+  });
+  navItems.forEach((link) => {
+    const active = link.hash === `#${current}`;
+    link.classList.toggle("active", active);
+    if (active) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  });
+  // Adapted from the reference's sectionProgress hook: actual viewing only.
+  chapterProgress.forEach((item) => {
+    const r = item.section.getBoundingClientRect();
+    const seen =
+      (window.innerHeight - r.top) / (r.height + window.innerHeight * 0.25);
+    item.seen = Math.max(item.seen, Math.min(1, Math.max(0, seen)));
+    item.bar.style.width = `${item.seen * 100}%`;
+  });
+}
+function scheduleScrollUpdate() {
+  if (!scrollFrame) scrollFrame = requestAnimationFrame(updateScrollState);
+}
+window.addEventListener("scroll", scheduleScrollUpdate, { passive: true });
+window.addEventListener("resize", scheduleScrollUpdate);
+updateScrollState();
+topBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: motionBehavior() });
+  document.querySelector(".brand").focus({ preventScroll: true });
 });
 
-if (!reducedMotion && "IntersectionObserver" in window) {
-    const observer = new IntersectionObserver((entries, currentObserver) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-                currentObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll("main > .section,.project-card,.skill-card,.timeline-item,.certificate-card,.education-card,.achievement-card").forEach((element, index) => {
-        element.style.setProperty("--reveal-delay", `${(index % 4) * 75}ms`);
-        element.classList.add("hidden");
-        observer.observe(element);
-    });
+// Native scrolling and boundary controls adapted from the reference RailButtons.
+const rail = document.getElementById("project-rail");
+const railPrev = document.getElementById("rail-prev");
+const railNext = document.getElementById("rail-next");
+function updateRail() {
+  railPrev.disabled = rail.scrollLeft < 8;
+  railNext.disabled =
+    rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 8;
 }
-
-if (!reducedMotion && window.matchMedia("(pointer: fine)").matches) {
-    const hero = document.querySelector(".hero");
-    hero?.addEventListener("pointermove", (event) => {
-        const bounds = hero.getBoundingClientRect();
-        hero.style.setProperty("--spot-x", `${event.clientX - bounds.left}px`);
-        hero.style.setProperty("--spot-y", `${event.clientY - bounds.top}px`);
-    }, { passive: true });
-
-    document.querySelectorAll(".project-card,.skill-card").forEach((card) => {
-        card.addEventListener("pointermove", (event) => {
-            const bounds = card.getBoundingClientRect();
-            card.style.setProperty("--mx", `${event.clientX - bounds.left}px`);
-            card.style.setProperty("--my", `${event.clientY - bounds.top}px`);
-        }, { passive: true });
-        card.addEventListener("pointerleave", () => {
-            card.style.removeProperty("--mx");
-            card.style.removeProperty("--my");
-        });
+function pageRail(direction) {
+  const card = rail.querySelector(".project-card:not([hidden])");
+  rail.scrollBy({
+    left: direction * (card.getBoundingClientRect().width + 25),
+    behavior: motionBehavior(),
+  });
+}
+railPrev.addEventListener("click", () => pageRail(-1));
+railNext.addEventListener("click", () => pageRail(1));
+rail.addEventListener("scroll", updateRail, { passive: true });
+window.addEventListener("resize", updateRail);
+rail.addEventListener("keydown", (event) => {
+  if (event.target !== rail || !["ArrowLeft", "ArrowRight"].includes(event.key))
+    return;
+  event.preventDefault();
+  pageRail(event.key === "ArrowRight" ? 1 : -1);
+});
+const projectCards = [...rail.querySelectorAll(".project-card")];
+const filterButtons = [...document.querySelectorAll("[data-filter]")];
+filterButtons.forEach((button) =>
+  button.addEventListener("click", () => {
+    filterButtons.forEach((filter) =>
+      filter.setAttribute("aria-pressed", String(filter === button)),
+    );
+    projectCards.forEach((card) => {
+      card.hidden =
+        button.dataset.filter !== "all" &&
+        card.dataset.genre !== button.dataset.filter;
     });
+    rail.scrollTo({ left: 0, behavior: "instant" });
+    const count = projectCards.filter((card) => !card.hidden).length;
+    document.getElementById("filter-status").textContent =
+      button.dataset.filter === "all"
+        ? "Showing all 5 projects"
+        : `Showing ${count} projects`;
+    requestAnimationFrame(updateRail);
+  }),
+);
+updateRail();
+
+const projectDialog = document.getElementById("project-dialog");
+const introDialog = document.getElementById("intro-dialog");
+const content = document.getElementById("project-dialog-content");
+let dialogTrigger = null;
+function openDialog(dialog, trigger) {
+  dialogTrigger = trigger;
+  dialog.showModal();
+  document.body.classList.add("modal-open");
+  dialog.scrollTop = 0;
+}
+[projectDialog, introDialog].forEach((dialog) => {
+  dialog
+    .querySelector(".dialog-close")
+    .addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", (event) => {
+    const r = dialog.getBoundingClientRect();
+    if (
+      event.target === dialog &&
+      (event.clientX < r.left ||
+        event.clientX > r.right ||
+        event.clientY < r.top ||
+        event.clientY > r.bottom)
+    )
+      dialog.close();
+  });
+  dialog.addEventListener("close", () => {
+    document.body.classList.remove("modal-open");
+    dialogTrigger?.focus({ preventScroll: true });
+  });
+});
+projectCards.forEach((card) => {
+  const summary = card.querySelector("summary");
+  summary.setAttribute("aria-haspopup", "dialog");
+  summary.setAttribute("aria-controls", "project-dialog");
+  summary.addEventListener("click", (event) => {
+    if (!projectDialog.showModal) return;
+    event.preventDefault();
+    content.replaceChildren();
+    const kicker = card.querySelector(".project-kicker").cloneNode(true);
+    const title = document.createElement("h2");
+    title.id = "project-dialog-title";
+    title.textContent = card.querySelector("h3").textContent;
+    const description = card
+      .querySelector(":scope > p:not(.project-kicker)")
+      .cloneNode(true);
+    const stack = card.querySelector(".project-tech").cloneNode(true);
+    const study = card.querySelector(".case-study-content").cloneNode(true);
+    const links = card.querySelector(".project-links").cloneNode(true);
+    content.append(kicker, title, description, stack, study, links);
+    openDialog(projectDialog, summary);
+  });
+});
+// A direct project anchor reveals the right card even after filtering.
+function revealHashProject() {
+  const card = projectCards.find((item) => `#${item.id}` === location.hash);
+  if (!card) return;
+  if (card.hidden) filterButtons[0].click();
+  const offset = card.offsetLeft - rail.offsetLeft;
+  rail.scrollTo({ left: offset, behavior: "instant" });
+  card.scrollIntoView({
+    block: "nearest",
+    inline: "nearest",
+    behavior: motionBehavior(),
+  });
+}
+window.addEventListener("hashchange", revealHashProject);
+revealHashProject();
+
+const slides = [...document.querySelectorAll(".intro-slide")];
+let slideIndex = 0;
+const introPrev = document.getElementById("intro-prev");
+const introNext = document.getElementById("intro-next");
+function showSlide(index) {
+  slideIndex = Math.max(0, Math.min(slides.length - 1, index));
+  slides.forEach((slide, i) => {
+    slide.hidden = i !== slideIndex;
+    slide.querySelector("h2").removeAttribute("id");
+  });
+  slides[slideIndex].querySelector("h2").id = "intro-title";
+  introPrev.disabled = slideIndex === 0;
+  introNext.disabled = slideIndex === slides.length - 1;
+  document.getElementById("intro-status").textContent =
+    `0${slideIndex + 1} / 03`;
+}
+document.getElementById("play-intro").addEventListener("click", (event) => {
+  showSlide(0);
+  openDialog(introDialog, event.currentTarget);
+});
+introPrev.addEventListener("click", () => showSlide(slideIndex - 1));
+introNext.addEventListener("click", () => showSlide(slideIndex + 1));
+introDialog.addEventListener("keydown", (event) => {
+  if (["ArrowLeft", "ArrowRight"].includes(event.key)) {
+    event.preventDefault();
+    showSlide(slideIndex + (event.key === "ArrowRight" ? 1 : -1));
+  }
+});
+document
+  .getElementById("intro-explore")
+  .addEventListener("click", () => introDialog.close());
+
+const portrait = document.querySelector(".profile-card");
+portrait.addEventListener("click", () => {
+  if (reducedMotion.matches) return;
+  portrait.classList.remove("is-orbiting");
+  void portrait.offsetWidth;
+  portrait.classList.add("is-orbiting");
+});
+portrait.addEventListener("animationend", () =>
+  portrait.classList.remove("is-orbiting"),
+);
+// Keep the earlier portfolio's local lightning interaction, in the new palette.
+document.addEventListener("click", (event) => {
+  if (reducedMotion.matches || event.target.closest("a,button,summary,dialog"))
+    return;
+  const card = event.target.closest(
+    ".project-card,.skill-card,.certificate-card,.education-card,.achievement-card",
+  );
+  if (!card) return;
+  card.querySelector(".lightning-strike")?.remove();
+  const bounds = card.getBoundingClientRect();
+  const flash = document.createElement("span");
+  flash.className = "lightning-strike";
+  flash.setAttribute("aria-hidden", "true");
+  flash.style.setProperty("--strike-x", `${event.clientX - bounds.left}px`);
+  flash.style.setProperty("--strike-y", `${event.clientY - bounds.top}px`);
+  card.append(flash);
+  flash.addEventListener("animationend", () => flash.remove(), { once: true });
+});
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        if (!reducedMotion.matches) entry.target.classList.add("reveal");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.08 },
+  );
+  document
+    .querySelectorAll(
+      ".section-title,.section-heading,.timeline-item,.skill-card",
+    )
+    .forEach((item) => observer.observe(item));
 }

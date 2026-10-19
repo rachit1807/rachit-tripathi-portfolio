@@ -32,20 +32,53 @@ Other work, including [ProductHub API](https://github.com/rachit1807/ProductHub-
 
 ## Portfolio implementation
 
-- Semantic HTML, responsive CSS, and vanilla JavaScript
-- A redesigned visual system with a luminous dark hero, glass navigation, editorial section layouts, and a featured-project case-study gallery
-- Ambient aurora lighting, a moving interests strip, portrait orbit details, pointer-tracked card highlights, hover motion, and scroll reveals
-- Decorative developer icons drift behind every section from the hero through the footer. They are hidden from assistive technology, sit behind the page content, and respect reduced-motion preferences.
-- Click the hero portrait for a full 360° orbit while it stays upright; click a project, certificate, profile, education, or focus-area card for a localized lightning strike. Light cards use a higher-contrast electric blue; reduced-motion preferences replace the animated strike with a brief static outline.
-- Hosted on GitHub Pages at the existing URL above
-- CSS and JavaScript asset URLs are versioned so deployments can refresh cached browser assets without changing the site URL
-- Project screenshots are from the linked repositories; sample dashboard values are identified as sample data
-- Skills are grouped by languages, frontend, backend and APIs, data, AI and machine learning, and tools and practices
-- The contact section links to email directly; this static site does not claim to submit contact forms
+A cinematic, streaming-inspired portfolio in dark charcoal, emerald green, and metallic silver. The hero introduces the person, the Originals collection introduces the work, and the remaining chapters cover experience, skills, training, education, the resume, and contact details.
 
-## Local preview
+- Semantic HTML, responsive CSS, and vanilla JavaScript; no build step or framework runtime.
+- Three-slide intro with previous/next controls and keyboard arrows.
+- Five featured projects in a native horizontal rail with arrow controls and category filters.
+- Project case-study dialogs retain the original architecture flows, quality notes, screenshots, demo instructions, and external links. Native details remain available when JavaScript is disabled.
+- Accessible mobile navigation, skip link, visible keyboard focus, native modal focus containment, Escape dismissal, and focus restoration.
+- Chapter progress reflects actual viewing. Reduced-motion preferences disable animated effects.
+- The existing portrait is optimized as a 61 KB WebP for the hero. The original image, certificate, and resume are retained.
+- Portrait orbit and local lightning interactions are carried over in the emerald palette.
+- Contact opens the visitor’s email app. Resume links support viewing and downloading the existing PDF.
+- No opening screen blocks access to the content.
 
-Clone the repository and open `index.html` in a browser, or serve the folder with a local static server. No build step is required.
+## Run locally
+
+Open `index.html`, or serve the repository with a static server:
+
+```sh
+python3 -m http.server 4173
+```
+
+Then open `http://localhost:4173/`. The folder can be opened directly in VS Code.
+
+## Content and styling
+
+| Change                                                                  | File                                       |
+| ----------------------------------------------------------------------- | ------------------------------------------ |
+| Personal details, experience, skills, five projects and case studies    | `index.html`                               |
+| Palette, typography, layouts, responsive breakpoints and motion         | `style.css`                                |
+| Navigation, intro, filters, project overlays, progress and interactions | `script.js`                                |
+| Resume                                                                  | `assets/resume/Rachit_Tripathi_Resume.pdf` |
+| Hero portrait                                                           | `assets/images/portrait.webp`              |
+| Original portrait                                                       | `assets/images/profile.png`                |
+
+Keep CSS and JavaScript query versions in `index.html` current when deploying asset changes.
+
+## Validation
+
+See [TESTING.md](TESTING.md) for checks completed on October 19, 2026, including the external demo timeouts. The redesign preserves every distinct external/resume link from the previous site and all five featured projects. JavaScript syntax, local assets, anchors, ARIA targets, project dialogs, filtering, keyboard behavior, and desktop, tablet, and mobile widths were checked.
+
+## GitHub Pages
+
+The live address remains:
+
+**https://rachit1807.github.io/rachit-tripathi-portfolio/**
+
+Keep the repository’s existing Pages publishing source. Publish the root containing `index.html`, `style.css`, `script.js`, `.nojekyll`, and `assets/`. Relative asset paths work under `/rachit-tripathi-portfolio/`; no Vite base or rewrite rules are needed. No Sites, Render, or Vercel deployment is required for this portfolio.
 
 ## Contact
 
