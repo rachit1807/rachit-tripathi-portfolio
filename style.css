@@ -343,6 +343,44 @@ p {
   align-items: center;
   min-height: 680px;
 }
+.live-clock {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 19px;
+  padding: 8px 11px;
+  border: 1px solid #6a8b7448;
+  background: #101b1899;
+  color: #a9bdb0;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  font-variant-numeric: tabular-nums;
+}
+.live-clock time {
+  color: var(--green);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+.live-clock #live-clock-zone {
+  color: #809387;
+  letter-spacing: 0.04em;
+}
+.live-clock-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 10px #9ee5ad88;
+  animation: clock-pulse 2s ease-in-out infinite alternate;
+}
+@keyframes clock-pulse {
+  to {
+    opacity: 0.45;
+    box-shadow: 0 0 3px #9ee5ad44;
+  }
+}
 .series-mark {
   display: flex;
   align-items: center;
@@ -2200,6 +2238,9 @@ dialog::backdrop {
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .live-clock-indicator {
+    animation: none;
+  }
   html {
     scroll-behavior: auto;
   }
@@ -2555,6 +2596,9 @@ footer {
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .live-clock-indicator {
+    animation: none !important;
+  }
   .liquid-body {
     translate: none !important;
     rotate: none !important;

@@ -117,10 +117,35 @@ class WaterLight {
 class BuoyantContent {
   constructor() {
     const selectors =
-      ".navbar,.hero-left,.hero-right,.hero-footer,.section-title,.section-heading,.project-card,.timeline-item,.skill-card,.about-image,.about-content,.certificate-card,.education-card,.achievement-card,.resume-card,.contact-info,.contact-direct,.tool-pool-heading,.chapter-nav > a,footer";
+      ".navbar,.hero-left,.hero-right,.hero-footer,.section-title,.section-heading,.project-card,.timeline-item,.skill-card,.about-image,.about-content,.certificate-card,.education-card,.achievement-card,.resume-card,.contact-item,.contact-direct,.tool-pool-heading,.chapter-nav > a,footer";
+    this.enabled = false;
     this.bodies = [...document.querySelectorAll(selectors)].map((el, i) => {
       el.classList.add("liquid-body");
-      return { el, x: 0, y: 0, vx: 0, vy: 0, phase: i * 1.81, visible: false };
+      const body = {
+        el,
+        x: 0,
+        y: 0,
+        vx: 0,
+        vy: 0,
+        phase: i * 1.81,
+        visible: false,
+        excitedUntil: 0,
+      };
+      const stir = (event) => {
+        if (!this.enabled || document.body.classList.contains("modal-open"))
+          return;
+        const rect = el.getBoundingClientRect();
+        const dx = rect.left + rect.width / 2 - event.clientX;
+        const dy = rect.top + rect.height / 2 - event.clientY;
+        const distance = Math.hypot(dx, dy) || 1;
+        const impulse = event.type === "pointerdown" ? 105 : 72;
+        body.vx += (dx / distance) * impulse;
+        body.vy += (dy / distance) * impulse;
+        body.excitedUntil = performance.now() + 950;
+      };
+      el.addEventListener("pointerenter", stir, { passive: true });
+      el.addEventListener("pointerdown", stir, { passive: true });
+      return body;
     });
     this.observer = new IntersectionObserver(
       (entries) => {
@@ -149,23 +174,34 @@ class BuoyantContent {
     }
   }
   update(dt, time) {
+    const now = performance.now();
     for (const body of this.bodies) {
       if (!body.visible || body.el.hidden) continue;
       const focused =
         body.el.matches(":focus-within") ||
         document.body.classList.contains("modal-open");
-      const x = focused ? 0 : Math.sin(time * 0.36 + body.phase) * 1.3;
-      const y = focused ? 0 : Math.cos(time * 0.43 + body.phase) * 2;
+      const excited = !focused && now < body.excitedUntil;
+      const x = focused
+        ? 0
+        : Math.sin(time * (excited ? 1.3 : 0.36) + body.phase) *
+          (excited ? 5.5 : 1.3);
+      const y = focused
+        ? 0
+        : Math.cos(time * (excited ? 1.45 : 0.43) + body.phase) *
+          (excited ? 7 : 2);
       spring(body, x, y, dt, 12, 7);
-      body.x = clamp(body.x, -7, 7);
-      body.y = clamp(body.y, -7, 7);
+      body.x = clamp(body.x, -20, 20);
+      body.y = clamp(body.y, -22, 22);
       body.el.style.setProperty("--drift-x", `${body.x.toFixed(2)}px`);
       body.el.style.setProperty("--drift-y", `${body.y.toFixed(2)}px`);
       body.el.style.setProperty(
         "--sway",
-        `${focused ? 0 : Math.sin(time * 0.3 + body.phase) * 0.09}deg`,
+        `${focused ? 0 : Math.sin(time * (excited ? 1.1 : 0.3) + body.phase) * (excited ? 0.32 : 0.09)}deg`,
       );
     }
+  }
+  setEnabled(enabled) {
+    this.enabled = enabled;
   }
   reset() {
     for (const body of this.bodies) {
@@ -337,6 +373,10 @@ class LiquidPortfolio {
     this.light = new WaterLight(this.canvas);
     this.content = new BuoyantContent();
     this.tools = new ToolPool(document.querySelector("#tool-pool"));
+    this.clockDisplay = document.querySelector("#live-clock");
+    this.clockZone = document.querySelector("#live-clock-zone");
+    this.updateLocalClock();
+    this.clockInterval = window.setInterval(() => this.updateLocalClock(), 1000);
     this.clock = new MotionClock((dt, time) => {
       this.light.draw(dt, time);
       this.content.update(dt, time);
@@ -363,10 +403,27 @@ class LiquidPortfolio {
     });
     this.sync();
   }
+  updateLocalClock() {
+    const date = new Date();
+    if (this.clockDisplay) {
+      this.clockDisplay.dateTime = date.toISOString();
+      this.clockDisplay.textContent = new Intl.DateTimeFormat(undefined, {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false,
+      }).format(date);
+    }
+    if (this.clockZone) {
+      const zone = new Intl.DateTimeFormat(undefined, {
+        timeZoneName: "short",
+      }).formatToParts(date).find((part) => part.type === "timeZoneName");
+      this.clockZone.textContent = zone?.value ?? "";
+    }
+  }
   pointer(event) {
     if (
       !this.enabled ||
-      event.pointerType !== "mouse" ||
       document.body.classList.contains("modal-open")
     )
       return;
@@ -398,6 +455,7 @@ class LiquidPortfolio {
       String(this.paused || this.media.matches),
     );
     this.canvas.hidden = !this.enabled;
+    this.content.setEnabled(this.enabled);
     this.tools.setEnabled(this.enabled);
     if (this.enabled) this.clock.start();
     else {

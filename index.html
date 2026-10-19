@@ -41,7 +41,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css?v=liquid-1" />
+    <link rel="stylesheet" href="style.css?v=liquid-2" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -94,6 +94,12 @@
         <div class="hero-orbit" aria-hidden="true"></div>
         <div class="hero-content">
           <div class="hero-left">
+            <div class="live-clock" aria-label="Your local time">
+              <span class="live-clock-indicator" aria-hidden="true"></span>
+              <span>LOCAL TIME</span>
+              <time id="live-clock" aria-live="off">--:--:--</time>
+              <span id="live-clock-zone"></span>
+            </div>
             <p class="series-mark">
               <span>RT</span> ORIGINAL <i></i> A DEVELOPER’S STORY
             </p>
@@ -1642,13 +1648,13 @@
         </button>
       </div>
     </dialog>
-    <script src="script.js?v=liquid-1"></script>
+    <script src="script.js?v=liquid-2"></script>
     <script
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
       integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="liquid-motion.js?v=liquid-1"></script>
+    <script type="module" src="liquid-motion.js?v=liquid-2"></script>
   </body>
 </html>
