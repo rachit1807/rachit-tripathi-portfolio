@@ -28,7 +28,7 @@
     />
     <meta
       property="og:image"
-      content="https://rachit1807.github.io/rachit-tripathi-portfolio/assets/images/profile.png"
+      content="https://rachit1807.github.io/rachit-tripathi-portfolio/assets/images/rachit-portrait-4k.jpg"
     />
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,11 +41,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css?v=emerald-2" />
+    <link rel="stylesheet" href="style.css?v=emerald-3" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
-    <div class="grain" aria-hidden="true"></div>
     <div id="progress-bar" aria-hidden="true"></div>
     <header class="site-header">
       <nav class="navbar" aria-label="Primary navigation">
@@ -138,21 +137,15 @@
               aria-label="Animate Rachit’s portrait around a 360-degree orbit"
               title="Click for a portrait orbit"
             >
-              <img
-                src="assets/images/portrait.webp"
-                width="800"
-                height="800"
-                alt="Rachit Tripathi"
-                fetchpriority="high"
-              />
-              <span class="portrait-shade" aria-hidden="true"></span
-              ><span class="portrait-corner" aria-hidden="true">↗</span
-              ><span class="portrait-caption"
-                ><small>THE PERSON BEHIND THE CODE</small
-                ><strong>Ideas into<br />working software.</strong></span
-              ><span class="portrait-coordinates"
-                >LUCKNOW, INDIA &nbsp; / &nbsp; 2026</span
-              >
+              <span class="portrait-photo">
+                <img
+                  src="assets/images/rachit-portrait-4k.jpg"
+                  width="2268"
+                  height="4032"
+                  alt="Rachit Tripathi wearing glasses and a navy shirt"
+                  fetchpriority="high"
+                />
+              </span>
             </button>
             <div class="portrait-stamp">
               <span>ENGINEER IN THE MAKING</span><b>Always<br />building.</b
@@ -995,7 +988,16 @@
 
         <div class="about-container">
           <div class="about-image">
-            <img src="assets/images/profile.png" alt="Rachit Tripathi" />
+            <span class="about-photo">
+              <img
+                src="assets/images/rachit-portrait-4k.jpg"
+                width="2268"
+                height="4032"
+                alt="Rachit Tripathi wearing glasses and a navy shirt"
+                loading="lazy"
+                decoding="async"
+              />
+            </span>
           </div>
 
           <div class="about-content">

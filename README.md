@@ -42,7 +42,7 @@ A cinematic, streaming-inspired portfolio in dark charcoal, emerald green, and m
 - Project case-study dialogs retain the original architecture flows, quality notes, screenshots, demo instructions, and external links. Native details remain available when JavaScript is disabled.
 - Accessible mobile navigation, skip link, visible keyboard focus, native modal focus containment, Escape dismissal, and focus restoration.
 - Chapter progress reflects actual viewing. Reduced-motion preferences disable animated effects.
-- The existing portrait is optimized as a 61 KB WebP for the hero. The original image, certificate, and resume are retained.
+- The hero and About section use the supplied natural-colour photograph at its original **2268 × 4032** resolution. A responsive CSS crop focuses on the face and upper body without modifying the image. Grayscale, tint, shading, and grain overlays have been removed from the photo presentation. The older image assets, certificate, and resume are retained.
 - Portrait orbit and local lightning interactions are carried over in the emerald palette.
 - Contact opens the visitor’s email app. Resume links support viewing and downloading the existing PDF.
 - No opening screen blocks access to the content.
@@ -65,8 +65,8 @@ Then open `http://localhost:4173/`. The folder can be opened directly in VS Code
 | Palette, typography, layouts, responsive breakpoints and motion         | `style.css`                                |
 | Navigation, intro, filters, project overlays, progress and interactions | `script.js`                                |
 | Resume                                                                  | `assets/resume/Rachit_Tripathi_Resume.pdf` |
-| Hero portrait                                                           | `assets/images/portrait.webp`              |
-| Original portrait                                                       | `assets/images/profile.png`                |
+| Current hero and About portrait (4032 px tall)                            | `assets/images/rachit-portrait-4k.jpg`      |
+| Previous portrait assets                                                | `assets/images/profile.png`, `assets/images/portrait.webp` |
 
 Keep CSS and JavaScript query versions in `index.html` current when deploying asset changes.
 

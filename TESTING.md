@@ -43,3 +43,12 @@ The portfolio is buildless HTML, CSS, and JavaScript. Keep the existing GitHub P
 - Browser checks: all-project filter shows six; full-stack filter shows TaskFlow Pro, TeamHub RBAC, and RailYatra. RailYatra opens its matching case study with four architecture nodes; Escape closes it and restores focus to its summary. The CodeMore text renders with the total and three selected projects.
 - No document width overflow at 320 px and 1440 px.
 - TaskNest, RailYatra full-stack demo, and RailYatra static preview returned HTTP 200. These checks verify reachability; authenticated workflows and bookings were not exercised.
+
+## Natural-colour portrait update — 19 October 2026
+
+- The supplied JPEG is 2268 × 4032 pixels and is copied byte for byte to `assets/images/rachit-portrait-4k.jpg`. No upscaling, AI reconstruction, colour grading, or image recompression was applied.
+- The hero, About portrait, and Open Graph image now use the new photograph. The face and upper body are framed with CSS; the source file stays intact.
+- Browser inspection confirms natural dimensions of 2268 × 4032, `filter: none`, `mix-blend-mode: normal`, and opacity 1 for both portraits. The old shade/text overlays and full-page grain overlay are removed.
+- Visually reviewed the hero at 1440 px, 777 px, and 320 px, plus the About portrait at 777 px. No document width overflow at 1440 px or 320 px.
+- The portrait interaction retains its closer crop during animation. The reduced-motion rule retains the same crop without animation.
+- JavaScript syntax, static link/asset checks, and Git whitespace checks passed. All six Originals and the CodeMore 26-project total remain present.
