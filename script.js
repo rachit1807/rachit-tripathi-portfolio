@@ -123,7 +123,7 @@ filterButtons.forEach((button) =>
     const count = projectCards.filter((card) => !card.hidden).length;
     document.getElementById("filter-status").textContent =
       button.dataset.filter === "all"
-        ? "Showing all 5 projects"
+        ? `Showing all ${count} projects`
         : `Showing ${count} projects`;
     requestAnimationFrame(updateRail);
   }),

@@ -1,6 +1,6 @@
 # Redesign verification — 19 October 2026
 
-## Completed
+## Initial redesign checks
 
 - JavaScript syntax check passed (`node --check script.js`).
 - Static HTML checks: all 35 IDs unique; all internal anchor and ARIA targets resolve; all local asset paths exist; exactly five featured projects.
@@ -32,3 +32,14 @@ The two timeouts may be cold starts or service issues; their functionality was n
 ## Deployment
 
 The portfolio is buildless HTML, CSS, and JavaScript. Keep the existing GitHub Pages repository and publishing source. `.nojekyll` permits plain static publication. No router, absolute-root asset paths, package installation, or new hosting service is required.
+
+## CodeMore and RailYatra update — 19 October 2026
+
+- Inspected GitHub documentation for TaskNest (`fullstack-app-deployment`), TeamHub RBAC, AI Code Review, and RailYatra, plus RailYatra source, package scripts, and CI configuration. Descriptions use documented implementation details.
+- CodeMore remains ongoing and states **26 projects in total**, with TaskNest, TeamHub RBAC, and AI Code Review as selected work. The total does not claim completion.
+- RailYatra is the sixth Original. Its case study explains the architecture, transaction/seat-allocation behavior, test coverage, and simulated booking/payment/ticket limits. The full-stack demo and static preview are labeled separately.
+- Static checks passed: six cards, three full-stack cards, 36 unique IDs, valid local assets/internal anchors/ARIA references, consistent project counts, and all 20 previous external/resume links retained.
+- JavaScript syntax and Git whitespace checks passed.
+- Browser checks: all-project filter shows six; full-stack filter shows TaskFlow Pro, TeamHub RBAC, and RailYatra. RailYatra opens its matching case study with four architecture nodes; Escape closes it and restores focus to its summary. The CodeMore text renders with the total and three selected projects.
+- No document width overflow at 320 px and 1440 px.
+- TaskNest, RailYatra full-stack demo, and RailYatra static preview returned HTTP 200. These checks verify reachability; authenticated workflows and bookings were not exercised.
