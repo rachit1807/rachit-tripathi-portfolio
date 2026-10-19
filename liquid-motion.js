@@ -117,7 +117,7 @@ class WaterLight {
 class BuoyantContent {
   constructor() {
     const selectors =
-      ".navbar,.hero-left,.hero-right,.hero-footer,.section-title,.section-heading,.project-card,.timeline-item,.skill-card,.about-image,.about-content,.certificate-card,.education-card,.achievement-card,.resume-card,.contact-info,.contact-direct,.tool-pool-heading,.chapter-nav > a,footer";
+      ".navbar,.hero-left,.hero-right,.hero-footer,.hero-buttons > *, .hero-social > a,.section-title,.section-heading,.project-card,.project-card .project-tags > *, .timeline-item,.skill-card,.about-image,.about-content,.about-content li,.certificate-card,.education-card,.achievement-card,.resume-card,.resume-actions > *, .contact-info,.contact-item,.contact-direct,.tool-pool-heading,.tool-orb,.chapter-nav > a,footer";
     this.bodies = [...document.querySelectorAll(selectors)].map((el, i) => {
       el.classList.add("liquid-body");
       return { el, x: 0, y: 0, vx: 0, vy: 0, phase: i * 1.81, visible: false };

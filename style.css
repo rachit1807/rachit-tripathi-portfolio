@@ -2453,7 +2453,19 @@ footer {
 }
 .floating-tools {
   margin-top: 30px;
-  border-block: 1px solid #354b42;
+  border-block: 0;
+  background-image:
+    linear-gradient(90deg, transparent, #9ee5ad8c, transparent),
+    linear-gradient(90deg, transparent, #9ee5ad58, transparent);
+  background-size: 36% 1px, 36% 1px;
+  background-position: 0 0, 100% 100%;
+  background-repeat: no-repeat;
+  animation: liquid-edge-flow 12s ease-in-out infinite alternate;
+}
+@keyframes liquid-edge-flow {
+  to {
+    background-position: 100% 0, 0 100%;
+  }
 }
 .tool-pool-heading {
   display: flex;
@@ -2489,6 +2501,9 @@ footer {
   border-radius: 8px;
 }
 .tool-orb {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   width: var(--orb-size);
   height: var(--orb-size);
   border: 1px solid #6c998368;
@@ -2505,6 +2520,21 @@ footer {
     0 10px 30px #0002;
   padding: 0;
   user-select: none;
+}
+.tool-orb::before {
+  position: absolute;
+  z-index: -1;
+  inset: 5px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 30% 20%, #d5f5e640, transparent 68%);
+  content: "";
+  animation: orb-caustic 7s ease-in-out infinite alternate;
+}
+@keyframes orb-caustic {
+  to {
+    transform: translate(5px, 3px) scale(0.84);
+    opacity: 0.55;
+  }
 }
 .tool-orb i {
   font-size: 24px;
@@ -2555,6 +2585,10 @@ footer {
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .floating-tools,
+  .tool-orb::before {
+    animation: none !important;
+  }
   .liquid-body {
     translate: none !important;
     rotate: none !important;
