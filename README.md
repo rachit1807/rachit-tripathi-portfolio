@@ -67,7 +67,7 @@ Then open `http://localhost:4173/`. The folder can be opened directly in VS Code
 | Personal details, experience, skills, six projects and case studies     | `index.html`                               |
 | Palette, typography, layouts, responsive breakpoints and motion         | `style.css`                                |
 | Navigation, intro, filters, project overlays, progress and interactions | `script.js`                                |
-| Resume                                                                  | `assets/resume/Rachit_Tripathi_Resume.pdf` |
+| Resume                                                                  | `assets/resume/Rachit_Tripathi_Resume_Updated.pdf` |
 | Hero portrait                                                           | `assets/images/portrait.webp`              |
 | About and social-preview portrait                                       | `assets/images/profile.png`                |
 | Light, motion lifecycle, dragging, and tool interaction                 | `liquid-motion.js`                         |
